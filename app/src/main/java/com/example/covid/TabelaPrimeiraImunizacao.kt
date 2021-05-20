@@ -8,7 +8,8 @@ import android.provider.BaseColumns
 class TabelaPrimeiraImunizacao (db: SQLiteDatabase) {
     private val db: SQLiteDatabase = db
     fun cria() {
-        db.execSQL("CREATE TABLE $NOME_TABELA (${BaseColumns._ID} INTEGER PRIMARY KEY AUTOINCREMENT, $CAMPO_NOME TEXT NOT NULL,$CAMPO_DATA_NASCIMENTO DATE NOT NULL,$CAMPO_DATA_ADMNISTRACAO DATE NOT NULL, $CAMPO_NUMERO_UTENTE INTEGER NOT NULL,$CAMPO_CONTACTO INTEGER NOT NULL)")
+        db.execSQL("CREATE TABLE $NOME_TABELA (${BaseColumns._ID} INTEGER PRIMARY KEY AUTOINCREMENT, $CAMPO_NOME TEXT NOT NULL," +
+                "$CAMPO_DATA_NASCIMENTO DATE NOT NULL,$CAMPO_DATA_ADMNISTRACAO DATE NOT NULL, $CAMPO_NUMERO_UTENTE INTEGER NOT NULL,$CAMPO_CONTACTO INTEGER NOT NULL)")
     }
     fun insert(values: ContentValues): Long {
         return db.insert(NOME_TABELA, null, values)
@@ -34,12 +35,12 @@ class TabelaPrimeiraImunizacao (db: SQLiteDatabase) {
     }
 
     companion object {
-        const val NOME_TABELA = "primeiraImunizacao"
+        const val NOME_TABELA = "primeira_imunizacao"
         const val CAMPO_NOME = "nome"
-        const val CAMPO_DATA_NASCIMENTO = "dataNascimento"
-        const val CAMPO_NUMERO_UTENTE = "numeroUtente"
+        const val CAMPO_DATA_NASCIMENTO = "data_nascimento"
+        const val CAMPO_NUMERO_UTENTE = "numero_utente"
         const val CAMPO_CONTACTO = "contacto"
-        const val CAMPO_DATA_ADMNISTRACAO = "dataAdmnistracao"
+        const val CAMPO_DATA_ADMNISTRACAO = "data_admnistracao"
 
         val TODAS_COLUNAS = arrayOf(BaseColumns._ID, CAMPO_NOME)
     }
