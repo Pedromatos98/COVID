@@ -35,11 +35,8 @@ class TabelaPrimeiraImunizacao (db: SQLiteDatabase) {
     }
 
     companion object {
-        const val NOME_TABELA = "primeira_imunizacao"
+        const val NOME_TABELA = "Vacinados"
         const val CAMPO_NOME = "nome"
-        const val CAMPO_DATA_NASCIMENTO = "data_nascimento"
-        const val CAMPO_NUMERO_UTENTE = "numero_utente"
-        const val CAMPO_CONTACTO = "contacto"
         const val CAMPO_DATA_ADMNISTRACAO = "data_admnistracao"
 
         val TODAS_COLUNAS = arrayOf(BaseColumns._ID, CAMPO_NOME)

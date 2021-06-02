@@ -36,7 +36,7 @@ class TabelaInfetados (db: SQLiteDatabase) {
     }
 
     companion object {
-        const val NOME_TABELA = "categorias"
+        const val NOME_TABELA = "infetados"
         const val CAMPO_NOME = "nome"
         const val CAMPO_DATA_NASCIMENTO = "data_nascimento"
         const val CAMPO_NUMERO_UTENTE = "numero_utente"
