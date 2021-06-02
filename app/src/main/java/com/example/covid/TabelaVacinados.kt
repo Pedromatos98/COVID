@@ -5,11 +5,10 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.provider.BaseColumns
 
-class TabelaPrimeiraImunizacao (db: SQLiteDatabase) {
+class TabelaVacinados (db: SQLiteDatabase) {
     private val db: SQLiteDatabase = db
     fun cria() {
-        db.execSQL("CREATE TABLE $NOME_TABELA (${BaseColumns._ID} INTEGER PRIMARY KEY AUTOINCREMENT, $CAMPO_NOME TEXT NOT NULL," +
-                "$CAMPO_DATA_NASCIMENTO DATE NOT NULL,$CAMPO_DATA_ADMNISTRACAO DATE NOT NULL, $CAMPO_NUMERO_UTENTE INTEGER NOT NULL,$CAMPO_CONTACTO INTEGER NOT NULL)")
+        db.execSQL("CREATE TABLE $NOME_TABELA (${BaseColumns._ID} INTEGER PRIMARY KEY AUTOINCREMENT, $CAMPO_NOME TEXT NOT NULL,$CAMPO_DATA_ADMNISTRACAO DATE NOT NULL, $NUMERO_ADMNISTRACOES INTEGER NOT NULl)")
     }
     fun insert(values: ContentValues): Long {
         return db.insert(NOME_TABELA, null, values)
@@ -38,6 +37,7 @@ class TabelaPrimeiraImunizacao (db: SQLiteDatabase) {
         const val NOME_TABELA = "Vacinados"
         const val CAMPO_NOME = "nome"
         const val CAMPO_DATA_ADMNISTRACAO = "data_admnistracao"
+        const val NUMERO_ADMNISTRACOES = "numero_admnistracoes"
 
         val TODAS_COLUNAS = arrayOf(BaseColumns._ID, CAMPO_NOME)
     }
