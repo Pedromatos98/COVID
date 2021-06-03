@@ -8,7 +8,7 @@ import android.provider.BaseColumns
 class TabelaVacinados (db: SQLiteDatabase) {
     private val db: SQLiteDatabase = db
     fun cria() {
-        db.execSQL("CREATE TABLE $NOME_TABELA (${BaseColumns._ID} INTEGER PRIMARY KEY AUTOINCREMENT, $CAMPO_NOME TEXT NOT NULL,$CAMPO_DATA_ADMNISTRACAO DATE NOT NULL, $NUMERO_ADMNISTRACOES INTEGER NOT NULl)")
+        db.execSQL("CREATE TABLE $NOME_TABELA (${BaseColumns._ID} INTEGER PRIMARY KEY AUTOINCREMENT,$CAMPO_DATA_ADMNISTRACAO DATE NOT NULL, $CAMPO_NUMERO_ADMNISTRACOES INTEGER NOT NULl,FOREIGN KEY($CAMPO_ID_PACIENTE) REFERENCES ${TabelaPacientes.NOME_TABELA})")
     }
     fun insert(values: ContentValues): Long {
         return db.insert(NOME_TABELA, null, values)
@@ -35,10 +35,10 @@ class TabelaVacinados (db: SQLiteDatabase) {
 
     companion object {
         const val NOME_TABELA = "Vacinados"
-        const val CAMPO_NOME = "nome"
         const val CAMPO_DATA_ADMNISTRACAO = "data_admnistracao"
-        const val NUMERO_ADMNISTRACOES = "numero_admnistracoes"
+        const val CAMPO_NUMERO_ADMNISTRACOES = "numero_admnistracoes"
+        const val CAMPO_ID_PACIENTE ="id_paciente"
 
-        val TODAS_COLUNAS = arrayOf(BaseColumns._ID, CAMPO_NOME)
+        val TODAS_COLUNAS = arrayOf(BaseColumns._ID, CAMPO_DATA_ADMNISTRACAO,CAMPO_NUMERO_ADMNISTRACOES,CAMPO_ID_PACIENTE)
     }
 }
