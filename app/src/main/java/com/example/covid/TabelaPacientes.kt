@@ -44,4 +44,3 @@ class TabelaPacientes (db: SQLiteDatabase) {
             CAMPO_DATA_NASCIMENTO, CAMPO_CONTACTO)
     }
 }
-}
