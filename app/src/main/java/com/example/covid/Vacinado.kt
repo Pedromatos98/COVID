@@ -20,14 +20,14 @@ class Vacinado (var id: Long = -1, var dataAdmnistracao: String, var numeroAdmni
             val colId = cursor.getColumnIndex(BaseColumns._ID)
             val colDataAdmn = cursor.getColumnIndex(TabelaVacinados.CAMPO_DATA_ADMNISTRACAO)
             val colNumeroAdm = cursor.getColumnIndex(TabelaVacinados.CAMPO_NUMERO_ADMNISTRACOES)
-            val colIdCateg = cursor.getColumnIndex(TabelaVacinados.CAMPO_ID_PACIENTE)
+            val colIdPaciente = cursor.getColumnIndex(TabelaVacinados.CAMPO_ID_PACIENTE)
 
             val id = cursor.getLong(colId)
             val dataAdmn = cursor.getString(colDataAdmn)
             val numeroAdm = cursor.getLong(colNumeroAdm)
-            val idCateg = cursor.getLong(colIdCateg)
+            val idPaciente = cursor.getLong(colIdPaciente)
 
-            return Vacinado(id, dataAdmn, numeroAdm, idCateg)
+            return Vacinado(id, dataAdmn, numeroAdm, idPaciente)
         }
     }
 }
