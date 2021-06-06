@@ -4,12 +4,12 @@ import android.content.ContentValues
 import android.database.Cursor
 import android.provider.BaseColumns
 
-class Vacinado (var id: Long = -1, var dataAdmnistracao: String, var numeroAdmnistracoes: Long, var idCategoria: Long)  {
+class Vacinado (var id: Long = -1, var dataAdmnistracao: String, var numeroAdmnistracoes: Long, var idPaciente: Long)  {
     fun toContentValues(): ContentValues {
         val valores = ContentValues().apply {
             put(TabelaVacinados.CAMPO_DATA_ADMNISTRACAO, dataAdmnistracao)
             put(TabelaVacinados.CAMPO_NUMERO_ADMNISTRACOES, numeroAdmnistracoes)
-            put(TabelaVacinados.CAMPO_ID_PACIENTE, idCategoria)
+            put(TabelaVacinados.CAMPO_ID_PACIENTE, idPaciente)
         }
 
         return valores

@@ -18,7 +18,7 @@ import org.junit.Before
 @RunWith(AndroidJUnit4::class)
 class TestesBaseDados {
     private fun getAppContext() = InstrumentationRegistry.getInstrumentation().targetContext
-    private fun getCovidOpenHelper() = BdCovidOpenHelper(getAppContext())
+    private fun getBdCovidOpenHelper() = BdCovidOpenHelper(getAppContext())
 
     private fun inserePaciente(tabela: TabelaPacientes, paciente: Paciente): Long {
         val id = tabela.insert(paciente.toContentValues())
@@ -80,20 +80,33 @@ class TestesBaseDados {
         assertNotNull(cursor)
         assert(cursor!!.moveToNext())
 
-        return  Vacinado.fromCursor(cursor)
+        return Vacinado.fromCursor(cursor)
     }
-
-
 
 
     @Before
     fun apagaBaseDados() {
         getAppContext().deleteDatabase(BdCovidOpenHelper.NOME_BASE_DADOS)
     }
+
     @Test
     fun consegueAbrirBaseDados() {
-        val db = getCovidOpenHelper().readableDatabase
+        val db = getBdCovidOpenHelper().readableDatabase
         assert(db.isOpen)
+        db.close()
+    }
+
+
+    @Test
+    fun consegueInserirPacientes() {
+        val db = getBdCovidOpenHelper().writableDatabase
+
+        val tabelaPacientes = TabelaPacientes(db)
+        val paciente = Paciente(nomePaciente = "António Ramos", numeroUtente = "123456789",dataNascimento = "01/07/1990",contacto = "961234567")
+        paciente.id = inserePaciente(tabelaPacientes, paciente)
+
+        assertEquals(paciente, getPacienteBaseDados(tabelaPacientes, paciente.id))
+
         db.close()
     }
 }
