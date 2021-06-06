@@ -1,5 +1,6 @@
 package com.example.covid
 
+import android.provider.BaseColumns
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
 
@@ -40,7 +41,48 @@ class TestesBaseDados {
         return id
     }
 
-    
+    private fun getPacienteBaseDados(tabela: TabelaPacientes, id: Long): Paciente {
+        val cursor = tabela.query(
+            TabelaPacientes.TODAS_COLUNAS,
+            "${BaseColumns._ID}=?",
+            arrayOf(id.toString()),
+            null, null, null
+        )
+
+        assertNotNull(cursor)
+        assert(cursor!!.moveToNext())
+
+        return Paciente.fromCursor(cursor)
+    }
+
+    private fun getInfetadoBaseDados(tabela: TabelaInfetados, id: Long): Infetado {
+        val cursor = tabela.query(
+            TabelaInfetados.TODAS_COLUNAS,
+            "${BaseColumns._ID}=?",
+            arrayOf(id.toString()),
+            null, null, null
+        )
+
+        assertNotNull(cursor)
+        assert(cursor!!.moveToNext())
+
+        return Infetado.fromCursor(cursor)
+    }
+
+    private fun getVacinadoBaseDados(tabela: TabelaVacinados, id: Long): Vacinado {
+        val cursor = tabela.query(
+            TabelaVacinados.TODAS_COLUNAS,
+            "${BaseColumns._ID}=?",
+            arrayOf(id.toString()),
+            null, null, null
+        )
+
+        assertNotNull(cursor)
+        assert(cursor!!.moveToNext())
+
+        return  Vacinado.fromCursor(cursor)
+    }
+
 
 
 

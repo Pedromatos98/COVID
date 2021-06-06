@@ -16,18 +16,18 @@ class Infetado(var id: Long = -1, var dataInfecao: String, var sintomas: Long, v
     }
 
     companion object {
-        fun fromCursor(cursor: Cursor): Vacinado {
+        fun fromCursor(cursor: Cursor): Infetado {
             val colId = cursor.getColumnIndex(BaseColumns._ID)
             val colDataInfecao = cursor.getColumnIndex(TabelaInfetados.CAMPO_DATA_INFECAO)
             val colSintomas = cursor.getColumnIndex(TabelaInfetados.CAMPO_SINTOMAS)
             val colIdPaciente = cursor.getColumnIndex(TabelaInfetados.CAMPO_ID_PACIENTE)
 
             val id = cursor.getLong(colId)
-            val dataAdmn = cursor.getString(colDataInfecao)
-            val numeroAdm = cursor.getLong(colSintomas)
+            val dataInfecao = cursor.getString(colDataInfecao)
+            val sintomas = cursor.getLong(colSintomas)
             val idPaciente = cursor.getLong(colIdPaciente)
 
-            return Vacinado(id, dataAdmn, numeroAdm, idPaciente)
+            return Infetado(id, dataInfecao, sintomas, idPaciente)
         }
     }
 }
