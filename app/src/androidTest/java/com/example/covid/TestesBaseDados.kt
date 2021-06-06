@@ -100,10 +100,34 @@ class TestesBaseDados {
     @Test
     fun consegueInserirPacientes() {
         val db = getBdCovidOpenHelper().writableDatabase
-
         val tabelaPacientes = TabelaPacientes(db)
+
         val paciente = Paciente(nomePaciente = "António Ramos", numeroUtente = "123456789",dataNascimento = "01/07/1990",contacto = "961234567")
         paciente.id = inserePaciente(tabelaPacientes, paciente)
+
+        assertEquals(paciente, getPacienteBaseDados(tabelaPacientes, paciente.id))
+
+        db.close()
+    }
+    fun consegueAlterarPacientes() {
+        val db = getBdCovidOpenHelper().writableDatabase
+        val tabelaPacientes = TabelaPacientes(db)
+
+        val paciente = Paciente(nomePaciente = "?", numeroUtente = "?",dataNascimento = "?",contacto = "?")
+        paciente.id = inserePaciente(tabelaPacientes, paciente)
+
+        paciente.nomePaciente = "José Costa"
+        paciente.numeroUtente = "987654321"
+        paciente.dataNascimento = "10-10-2000"
+        paciente.contacto="969876543"
+
+        val registosAlterados = tabelaPacientes.update(
+            paciente.toContentValues(),
+            "${BaseColumns._ID}=?",
+            arrayOf(paciente.id.toString())
+        )
+
+        assertEquals(1, registosAlterados)
 
         assertEquals(paciente, getPacienteBaseDados(tabelaPacientes, paciente.id))
 
