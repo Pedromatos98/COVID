@@ -109,6 +109,7 @@ class TestesBaseDados {
 
         db.close()
     }
+    @Test
     fun consegueAlterarPacientes() {
         val db = getBdCovidOpenHelper().writableDatabase
         val tabelaPacientes = TabelaPacientes(db)
@@ -133,4 +134,24 @@ class TestesBaseDados {
 
         db.close()
     }
+
+    @Test
+    fun consegueEliminarPacientes() {
+        val db = getBdCovidOpenHelper().writableDatabase
+
+        val tabelaPacientes = TabelaPacientes(db)
+        val paciente = Paciente(nomePaciente = "?", numeroUtente = "?", dataNascimento = "?",contacto = "?")
+        paciente.id = inserePaciente(tabelaPacientes, paciente)
+
+        val registosEliminados = tabelaPacientes.delete(
+            "${BaseColumns._ID}=?",
+            arrayOf(paciente.id.toString())
+        )
+
+        assertEquals(1, registosEliminados)
+
+        db.close()
+    }
+
+
 }
