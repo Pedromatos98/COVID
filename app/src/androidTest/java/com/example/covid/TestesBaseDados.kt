@@ -152,6 +152,18 @@ class TestesBaseDados {
 
         db.close()
     }
+    @Test
+    fun consegueLerPacientes() {
+        val db = getBdCovidOpenHelper().writableDatabase
+
+        val tabelaPacientes = TabelaPacientes(db)
+        val paciente = Paciente(nomePaciente= "Mário Batista", numeroUtente = "123454321", dataNascimento = "20-12-1980",contacto = "961234987")
+        paciente.id = inserePaciente(tabelaPacientes, paciente)
+
+        assertEquals(paciente, getPacienteBaseDados(tabelaPacientes, paciente.id))
+
+        db.close()
+    }
 
 
 }
