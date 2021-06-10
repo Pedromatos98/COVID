@@ -20,13 +20,13 @@
         tools:text="123456789" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textViewDataNascimento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="01/02/1980" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textViewContacto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="96123321" />
