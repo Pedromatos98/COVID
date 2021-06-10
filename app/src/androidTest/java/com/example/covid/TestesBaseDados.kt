@@ -102,25 +102,32 @@ class TestesBaseDados {
         val db = getBdCovidOpenHelper().writableDatabase
         val tabelaPacientes = TabelaPacientes(db)
 
-        val paciente = Paciente(nomePaciente = "António Ramos", numeroUtente = "123456789",dataNascimento = "01/07/1990",contacto = "961234567")
+        val paciente = Paciente(
+            nomePaciente = "António Ramos",
+            numeroUtente = "123456789",
+            dataNascimento = "01/07/1990",
+            contacto = "961234567"
+        )
         paciente.id = inserePaciente(tabelaPacientes, paciente)
 
         assertEquals(paciente, getPacienteBaseDados(tabelaPacientes, paciente.id))
 
         db.close()
     }
+
     @Test
     fun consegueAlterarPacientes() {
         val db = getBdCovidOpenHelper().writableDatabase
         val tabelaPacientes = TabelaPacientes(db)
 
-        val paciente = Paciente(nomePaciente = "?", numeroUtente = "?",dataNascimento = "?",contacto = "?")
+        val paciente =
+            Paciente(nomePaciente = "?", numeroUtente = "?", dataNascimento = "?", contacto = "?")
         paciente.id = inserePaciente(tabelaPacientes, paciente)
 
         paciente.nomePaciente = "José Costa"
         paciente.numeroUtente = "987654321"
         paciente.dataNascimento = "10-10-2000"
-        paciente.contacto="969876543"
+        paciente.contacto = "969876543"
 
         val registosAlterados = tabelaPacientes.update(
             paciente.toContentValues(),
@@ -140,7 +147,8 @@ class TestesBaseDados {
         val db = getBdCovidOpenHelper().writableDatabase
 
         val tabelaPacientes = TabelaPacientes(db)
-        val paciente = Paciente(nomePaciente = "?", numeroUtente = "?", dataNascimento = "?",contacto = "?")
+        val paciente =
+            Paciente(nomePaciente = "?", numeroUtente = "?", dataNascimento = "?", contacto = "?")
         paciente.id = inserePaciente(tabelaPacientes, paciente)
 
         val registosEliminados = tabelaPacientes.delete(
@@ -152,12 +160,18 @@ class TestesBaseDados {
 
         db.close()
     }
+
     @Test
     fun consegueLerPacientes() {
         val db = getBdCovidOpenHelper().writableDatabase
 
         val tabelaPacientes = TabelaPacientes(db)
-        val paciente = Paciente(nomePaciente= "Mário Batista", numeroUtente = "123454321", dataNascimento = "20-12-1980",contacto = "961234987")
+        val paciente = Paciente(
+            nomePaciente = "Mário Batista",
+            numeroUtente = "123454321",
+            dataNascimento = "20-12-1980",
+            contacto = "961234987"
+        )
         paciente.id = inserePaciente(tabelaPacientes, paciente)
 
         assertEquals(paciente, getPacienteBaseDados(tabelaPacientes, paciente.id))
@@ -166,4 +180,111 @@ class TestesBaseDados {
     }
 
 
+    //
+
+    @Test
+    fun consegueInserirInfetado() {
+        val db = getBdCovidOpenHelper().writableDatabase
+
+        val tabelaPacientes = TabelaPacientes(db)
+        val paciente =
+            Paciente(nomePaciente = "Artur Silva", numeroUtente = "198273654", dataNascimento = "12-09-1992",contacto = "969182736")
+        paciente.id = inserePaciente(tabelaPacientes, paciente)
+
+
+        val infetado = Infetado(
+            dataInfecao = "10-06-2021",
+            sintomas = "falta de paladar ",
+            idPaciente = paciente.id
+        )
+        infetado.id = inserePaciente(tabelaPacientes, paciente)
+
+        assertEquals(paciente, getPacienteBaseDados(tabelaPacientes, paciente.id))
+
+        db.close()
+    }
+
+    @Test
+    fun consegueAlterarInfetados() {
+        val db = getBdCovidOpenHelper().writableDatabase
+        val tabelaPacientes = TabelaPacientes(db)
+
+        val paciente1 = Paciente(nomePaciente = "António Ramos", numeroUtente = "123456789", dataNascimento = "01/07/1990", contacto = "961234567")
+        paciente1.id = inserePaciente(tabelaPacientes,paciente1)
+        val paciente2 = Paciente(nomePaciente = "João Santos", numeroUtente = "234567891", dataNascimento = "31/12/1985", contacto = "939876543")
+        paciente2.id = inserePaciente(tabelaPacientes,paciente2)
+
+        val tabelaInfetados = TabelaInfetados(db)
+        val infetado = Infetado(dataInfecao = "?",sintomas = "?",idPaciente = paciente1.id)
+        infetado.id = insereInfetado(tabelaInfetados, infetado)
+
+        infetado.dataInfecao = "10-05-2021"
+        infetado.sintomas = "dor de cabeça"
+        infetado.idPaciente = paciente2.id
+
+        val registosAlterados = tabelaInfetados.update(
+            infetado.toContentValues(),
+            "${BaseColumns._ID}=?",
+            arrayOf(infetado.id.toString())
+        )
+
+        assertEquals(1, registosAlterados)
+
+        assertEquals(infetado, getInfetadoBaseDados(tabelaInfetados, infetado.id))
+
+        db.close()
+    }
+
+    @Test
+    fun consegueEliminarInfetados() {
+        val db = getBdCovidOpenHelper().writableDatabase
+
+        val tabelaPacientes = TabelaPacientes(db)
+        val paciente = Paciente(
+            nomePaciente = "Raúl Furtado ",
+            numeroUtente = "918273654",
+            dataNascimento = "05-01-1985",
+            contacto = "966543219"
+        )
+        paciente.id = inserePaciente(tabelaPacientes, paciente)
+
+        val tabelaInfetados = TabelaInfetados(db)
+        val infetado = Infetado(dataInfecao = "?", sintomas = "?", idPaciente = paciente.id)
+        infetado.id = insereInfetado(tabelaInfetados, infetado)
+
+        val registosEliminados = tabelaInfetados.delete(
+            "${BaseColumns._ID}=?",
+            arrayOf(infetado.id.toString())
+        )
+
+        assertEquals(1, registosEliminados)
+
+        db.close()
+
+    }
+
+    @Test
+    fun consegueLerInfetados() {
+        val db = getBdCovidOpenHelper().writableDatabase
+
+        val tabelaPacientes = TabelaPacientes(db)
+        val paciente = Paciente(
+            nomePaciente = "Bernardo Mota",
+            numeroUtente = "12987654",
+            dataNascimento = "19-07-1995",contacto = "921345678")
+        paciente.id = inserePaciente(tabelaPacientes, paciente)
+
+        val tabelaInfetados = TabelaInfetados(db)
+        val infetado = Infetado(
+            dataInfecao = "09-06-2021",
+            sintomas = "dificuldades respiratórias",
+            idPaciente = paciente.id
+        )
+        infetado.id = insereInfetado(tabelaInfetados, infetado)
+
+        assertEquals(infetado, getInfetadoBaseDados(tabelaInfetados, infetado.id))
+
+        db.close()
+    }
 }
+

@@ -68,7 +68,7 @@ class ListaPacientesFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor>
     override fun onCreateLoader(id: Int, args: Bundle?): Loader<Cursor> {
         return CursorLoader(
             requireContext(),
-            contentProviderCovid.ENDERECO_PACIENTES,
+            ContentProviderCovid.ENDERECO_PACIENTES,
             TabelaPacientes.TODAS_COLUNAS,
             null, null,
             TabelaPacientes.CAMPO_NOME_PACIENTE
