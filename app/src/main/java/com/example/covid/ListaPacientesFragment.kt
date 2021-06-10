@@ -11,7 +11,7 @@ import androidx.loader.content.CursorLoader
 import androidx.loader.content.Loader
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
+import com.example.covid.databinding.FragmentListaPacientesBinding
 
 
 /**

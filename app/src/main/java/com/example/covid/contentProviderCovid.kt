@@ -1,4 +1,4 @@
-package pt.ipg.livros
+package com.example.covid
 
 import android.content.ContentProvider
 import android.content.ContentValues
@@ -6,13 +6,9 @@ import android.content.UriMatcher
 import android.database.Cursor
 import android.net.Uri
 import android.provider.BaseColumns
-import com.example.covid.BdCovidOpenHelper
-import com.example.covid.TabelaInfetados
-import com.example.covid.TabelaPacientes
-import com.example.covid.TabelaVacinados
 import kotlin.math.E
 
-class ContentProviderLivros : ContentProvider() {
+class contentProviderCovid : ContentProvider() {
     private var bdLivrosOpenHelper: BdCovidOpenHelper? = null
 
     /**
