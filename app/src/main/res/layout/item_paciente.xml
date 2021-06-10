@@ -9,6 +9,7 @@
         android:id="@+id/textViewNomePaciente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margem_campos"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         tools:text="António Silva" />
 
@@ -16,6 +17,7 @@
         android:id="@+id/textViewNumeroUtente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margem_campos"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         tools:text="123456789" />
 
@@ -23,11 +25,13 @@
         android:id="@+id/textViewDataNascimento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margem_campos"
         tools:text="01/02/1980" />
 
     <TextView
         android:id="@+id/textViewContacto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margem_campos"
         tools:text="96123321" />
 </LinearLayout>
