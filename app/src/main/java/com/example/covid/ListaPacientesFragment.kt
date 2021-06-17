@@ -3,12 +3,14 @@ package com.example.covid
 import android.database.Cursor
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.loader.app.LoaderManager
 import androidx.loader.content.CursorLoader
 import androidx.loader.content.Loader
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.covid.databinding.FragmentListaPacientesBinding
@@ -49,7 +51,26 @@ class ListaPacientesFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor>
 
 //            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
     }
+    fun navegaNovoPaciente(){
+        findNavController().navigate(R.id.action_ListaPacientesFragment_to_NovoPacienteFragment)
+    }
+    fun navegaAlterarPaciente() {
+        //todo: navegar para o fragmento da edição de um livro
+    }
 
+    fun navegaEliminarPaciente() {
+        //todo: navegar para o fragmento para confirmar eliminação de um livro
+    }
+    fun processaOpcaoMenu(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_novo_paciente -> navegaNovoPaciente()
+            R.id.action_alterar_paciente -> navegaAlterarPaciente()
+            R.id.action_eliminar_paciente -> navegaEliminarPaciente()
+            else -> return false
+        }
+
+        return true
+    }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
