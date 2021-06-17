@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">COVID</string>
+    <string name="novo_paciente">novo_paciente</string>
+    <string name="alterar_paciente">alterar_paciente</string>
+    <string name="eliminar_paciente">Eliminar paciente</string>
+    <string name="settings">Settings</string>
 </resources>

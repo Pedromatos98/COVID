@@ -44,7 +44,7 @@ class TestesBaseDados {
     private fun getPacienteBaseDados(tabela: TabelaPacientes, id: Long): Paciente {
         val cursor = tabela.query(
             TabelaPacientes.TODAS_COLUNAS,
-            "${BaseColumns._ID}=?",
+            "${TabelaPacientes.NOME_TABELA}.${BaseColumns._ID}=?",
             arrayOf(id.toString()),
             null, null, null
         )
@@ -58,7 +58,7 @@ class TestesBaseDados {
     private fun getInfetadoBaseDados(tabela: TabelaInfetados, id: Long): Infetado {
         val cursor = tabela.query(
             TabelaInfetados.TODAS_COLUNAS,
-            "${BaseColumns._ID}=?",
+            "${TabelaInfetados.NOME_TABELA}.${BaseColumns._ID}=?",
             arrayOf(id.toString()),
             null, null, null
         )
