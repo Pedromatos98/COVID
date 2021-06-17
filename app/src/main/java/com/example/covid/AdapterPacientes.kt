@@ -14,7 +14,8 @@ class AdapterPacientes (val fragment: ListaPacientesFragment) : RecyclerView.Ada
             notifyDataSetChanged()
         }
 
-    class ViewHolderPaciente(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolderPaciente(itemView: View) : RecyclerView.ViewHolder(itemView),
+        View.OnClickListener {
         private val textViewNomePaciente = itemView.findViewById<TextView>(R.id.textViewNomePaciente)
         private val textViewNumeroUtente = itemView.findViewById<TextView>(R.id.textViewNumeroUtente)
         private val textViewDataNascimento = itemView.findViewById<TextView>(R.id.textViewDataNascimento)

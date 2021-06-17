@@ -4,4 +4,9 @@
     <string name="alterar_paciente">alterar_paciente</string>
     <string name="eliminar_paciente">Eliminar paciente</string>
     <string name="settings">Settings</string>
+    <string name="nome_paciente">Nome Paciente</string>
+    <string name="numero_utente">Número Utente</string>
+    <string name="data_nascimento">Data Nascimento</string>
+    <string name="morada">Morada</string>
+    <string name="contacto">Contacto</string>
 </resources>
