@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_lista_pacientes, menu)
         this.menu = menu
-        atualizaMenuListaLivros(false)
+        atualizaMenuListaPacientes(false)
 
         return true
     }
@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity() {
                 || super.onSupportNavigateUp()
     }
 
-    fun atualizaMenuListaLivros(mostraBotoesAlterarEliminar : Boolean) {
+    fun atualizaMenuListaPacientes(mostraBotoesAlterarEliminar : Boolean) {
         menu.findItem(R.id.action_alterar_paciente).setVisible(mostraBotoesAlterarEliminar)
         menu.findItem(R.id.action_eliminar_paciente).setVisible(mostraBotoesAlterarEliminar)
     }
