@@ -15,21 +15,51 @@ class AdapterPacientes (val fragment: ListaPacientesFragment) : RecyclerView.Ada
         }
 
     class ViewHolderPaciente(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val textViewNomePaciente =
-            itemView.findViewById<TextView>(R.id.textViewNomePaciente)
-        private val textViewNumeroUtente =
-            itemView.findViewById<TextView>(R.id.textViewNumeroUtente)
-        private val textViewDataNascimento =
-            itemView.findViewById<TextView>(R.id.textViewDataNascimento)
+        private val textViewNomePaciente = itemView.findViewById<TextView>(R.id.textViewNomePaciente)
+        private val textViewNumeroUtente = itemView.findViewById<TextView>(R.id.textViewNumeroUtente)
+        private val textViewDataNascimento = itemView.findViewById<TextView>(R.id.textViewDataNascimento)
         private val textViewContacto = itemView.findViewById<TextView>(R.id.textViewContacto)
 
+        private lateinit var paciente: Paciente
+
+        init {
+            itemView.setOnClickListener(this)
+        }
+
         fun atualizaPaciente(Paciente: Paciente) {
+            this.paciente = Paciente
             textViewNomePaciente.text = Paciente.nomePaciente
             textViewNumeroUtente.text = Paciente.numeroUtente
             textViewDataNascimento.text = Paciente.dataNascimento
             textViewContacto.text = Paciente.contacto
         }
+
+    /**
+     * Called when a view has been clicked.
+     *
+     * @param v The view that was clicked.
+     */
+    override fun onClick(v: View?) {
+        selecionado?.desSeleciona()
+        seleciona()
     }
+
+    private fun seleciona() {
+        selecionado = this
+        itemView.setBackgroundResource(R.color.cor_selecao)
+        DadosApp.pacienteSelecionado = paciente
+        DadosApp.activity.atualizaMenuListaLivros(true)
+    }
+
+    private fun desSeleciona() {
+        selecionado = null
+        itemView.setBackgroundResource(android.R.color.white)
+    }
+
+    companion object {
+        var selecionado : ViewHolderPaciente? = null
+    }
+}
 
     /**
      * Called when RecyclerView needs a new [ViewHolder] of the given type to represent
