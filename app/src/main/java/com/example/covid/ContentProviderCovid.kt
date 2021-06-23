@@ -9,7 +9,7 @@ import android.provider.BaseColumns
 import kotlin.math.E
 
 class ContentProviderCovid : ContentProvider() {
-    private var bdLivrosOpenHelper: BdCovidOpenHelper? = null
+    private var bdCovidOpenHelper: BdCovidOpenHelper? = null
 
     /**
      * Implement this to initialize your content provider on startup.
@@ -39,7 +39,7 @@ class ContentProviderCovid : ContentProvider() {
      * @return true if the provider was successfully loaded, false otherwise
      */
     override fun onCreate(): Boolean {
-        bdLivrosOpenHelper = BdCovidOpenHelper(context)
+        bdCovidOpenHelper = BdCovidOpenHelper(context)
 
         return true
     }
@@ -118,7 +118,7 @@ class ContentProviderCovid : ContentProvider() {
         selectionArgs: Array<out String>?,
         sortOrder: String?
     ): Cursor? {
-        val bd = bdLivrosOpenHelper!!.readableDatabase
+        val bd = bdCovidOpenHelper!!.readableDatabase
 
         return when (getUriMatcher().match(uri)) {
             URI_PACIENTES -> TabelaPacientes(bd).query(
@@ -223,12 +223,12 @@ class ContentProviderCovid : ContentProvider() {
      * @return The URI for the newly inserted item.
      */
     override fun insert(uri: Uri, values: ContentValues?): Uri? {
-        val bd = bdLivrosOpenHelper!!.writableDatabase
+        val bd = bdCovidOpenHelper!!.writableDatabase
 
         val id = when (getUriMatcher().match(uri)) {
             URI_PACIENTES -> TabelaPacientes(bd).insert(values!!)
             URI_INFETADOS -> TabelaInfetados(bd).insert(values!!)
-            URI_VACINADOS -> TabelaInfetados(bd).insert(values!!)
+            URI_VACINADOS -> TabelaVacinados(bd).insert(values!!)
 
             else -> -1L
         }
@@ -262,7 +262,7 @@ class ContentProviderCovid : ContentProvider() {
      * @throws SQLException
      */
     override fun delete(uri: Uri, selection: String?, selectionArgs: Array<out String>?): Int {
-        val bd = bdLivrosOpenHelper!!.writableDatabase
+        val bd = bdCovidOpenHelper!!.writableDatabase
 
         return when (getUriMatcher().match(uri)) {
             URI_PACIENTE_ESPECIFICO -> TabelaPacientes(bd).delete(
@@ -274,7 +274,7 @@ class ContentProviderCovid : ContentProvider() {
                 "${BaseColumns._ID}=?",
                 arrayOf(uri.lastPathSegment!!)
             )
-            URI_VACINADO_ESPECIFICO -> TabelaInfetados(bd).delete(
+            URI_VACINADO_ESPECIFICO -> TabelaVacinados(bd).delete(
                 "${BaseColumns._ID}=?",
                 arrayOf(uri.lastPathSegment!!)
             )
@@ -304,7 +304,7 @@ class ContentProviderCovid : ContentProvider() {
         selection: String?,
         selectionArgs: Array<out String>?
     ): Int {
-        val bd = bdLivrosOpenHelper!!.writableDatabase
+        val bd = bdCovidOpenHelper!!.writableDatabase
 
         return when (getUriMatcher().match(uri)) {
             URI_PACIENTE_ESPECIFICO -> TabelaPacientes(bd).update(
@@ -318,7 +318,7 @@ class ContentProviderCovid : ContentProvider() {
                 "${BaseColumns._ID}=?",
                 arrayOf(uri.lastPathSegment!!)
             )
-            URI_VACINADO_ESPECIFICO -> TabelaInfetados(bd).update(
+            URI_VACINADO_ESPECIFICO -> TabelaVacinados(bd).update(
                 values!!,
                 "${BaseColumns._ID}=?",
                 arrayOf(uri.lastPathSegment!!)

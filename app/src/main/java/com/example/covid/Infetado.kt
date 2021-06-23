@@ -4,6 +4,7 @@ import android.content.ContentValues
 import android.database.Cursor
 import android.provider.BaseColumns
 
+
 data class Infetado(var id: Long = -1, var dataInfecao: String, var sintomas: String, var idPaciente: Long)  {
     fun toContentValues(): ContentValues {
         val valores = ContentValues().apply {

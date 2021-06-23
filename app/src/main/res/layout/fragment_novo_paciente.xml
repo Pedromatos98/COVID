@@ -30,24 +30,24 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/margem_campos">
+                android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextDataNascimento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margem_campos"
                     android:hint="@string/data_nascimento" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/margem_campos">
+                    android:layout_height="match_parent">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editTextMorada"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margem_campos"
                         android:hint="@string/morada" />
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -62,8 +62,6 @@
                     </com.google.android.material.textfield.TextInputLayout>
                 </com.google.android.material.textfield.TextInputLayout>
             </com.google.android.material.textfield.TextInputLayout>
-
         </com.google.android.material.textfield.TextInputLayout>
-
     </com.google.android.material.textfield.TextInputLayout>
 </LinearLayout>

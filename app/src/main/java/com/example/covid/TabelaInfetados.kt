@@ -41,6 +41,7 @@ class TabelaInfetados (db: SQLiteDatabase) {
         const val CAMPO_SINTOMAS = "sintomas"
         const val CAMPO_ID_PACIENTE ="id_paciente"
 
-        val TODAS_COLUNAS = arrayOf(BaseColumns._ID, CAMPO_DATA_INFECAO, CAMPO_SINTOMAS)
+        val TODAS_COLUNAS = arrayOf(BaseColumns._ID, CAMPO_DATA_INFECAO, CAMPO_SINTOMAS,
+            CAMPO_ID_PACIENTE)
     }
 }
