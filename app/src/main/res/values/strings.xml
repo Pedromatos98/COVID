@@ -9,4 +9,5 @@
     <string name="data_nascimento">Data Nascimento</string>
     <string name="morada">Morada</string>
     <string name="contacto">Contacto</string>
+    <string name="guardar">guardar</string>
 </resources>
