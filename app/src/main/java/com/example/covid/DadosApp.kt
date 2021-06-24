@@ -4,7 +4,8 @@ package com.example.covid
 class DadosApp {
         companion object {
             lateinit var activity: MainActivity
-            lateinit var listaPacientesFragment: ListaPacientesFragment
+             var listaPacientesFragment: ListaPacientesFragment ?=null
+             var novoPacienteFragment: NovoPacienteFragment ?=null
             var pacienteSelecionado : Paciente? = null
         }
 }
