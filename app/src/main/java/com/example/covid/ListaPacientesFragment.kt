@@ -32,7 +32,8 @@ class ListaPacientesFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor>
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
+        DadosApp.listaPacientesFragment = this
+        (activity as MainActivity).menuAtual = R.menu.menu_lista_pacientes
         _binding = FragmentListaPacientesBinding.inflate(inflater, container, false)
         return binding.root
 
@@ -47,7 +48,7 @@ class ListaPacientesFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor>
         recyclerViewPacientes.layoutManager = LinearLayoutManager(requireContext())
 
         LoaderManager.getInstance(this)
-            .initLoader(ID_LOADER_MANAGER_LIVROS, null, this)
+            .initLoader(ID_LOADER_MANAGER_PACIENTES, null, this)
 
 //            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
     }
@@ -158,7 +159,7 @@ class ListaPacientesFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor>
     }
 
     companion object {
-        const val ID_LOADER_MANAGER_LIVROS = 0
+        const val ID_LOADER_MANAGER_PACIENTES = 0
 
     }
 }

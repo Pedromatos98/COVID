@@ -172,6 +172,7 @@ class TestesBaseDados {
             dataNascimento = "20-12-1980",
             contacto = "961234987"
         )
+
         paciente.id = inserePaciente(tabelaPacientes, paciente)
 
         assertEquals(paciente, getPacienteBaseDados(tabelaPacientes, paciente.id))
