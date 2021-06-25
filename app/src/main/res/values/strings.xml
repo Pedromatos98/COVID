@@ -10,4 +10,6 @@
     <string name="morada">Morada</string>
     <string name="contacto">Contacto</string>
     <string name="guardar">guardar</string>
+    <string name="novo_paciente_fragment_label">Novo Paciente</string>
+    <string name="lista_pacientes_fragment_label">Pacientes</string>
 </resources>

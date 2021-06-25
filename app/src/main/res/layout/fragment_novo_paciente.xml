@@ -15,7 +15,8 @@
             android:id="@+id/editTextNomePaciente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/nome_paciente" />
+            android:hint="@string/nome_paciente"
+            android:inputType="textPersonName" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -26,7 +27,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margem_campos"
-                android:hint="@string/numero_utente" />
+                android:hint="@string/numero_utente"
+                android:inputType="number" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -37,7 +39,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margem_campos"
-                    android:hint="@string/data_nascimento" />
+                    android:hint="@string/data_nascimento"
+                    android:inputType="date" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
@@ -59,7 +62,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/margem_campos"
-                            android:hint="@string/contacto" />
+                            android:hint="@string/contacto"
+                            android:inputType="phone" />
                     </com.google.android.material.textfield.TextInputLayout>
                 </com.google.android.material.textfield.TextInputLayout>
             </com.google.android.material.textfield.TextInputLayout>

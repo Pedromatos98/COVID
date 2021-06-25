@@ -16,7 +16,7 @@
     <fragment
         android:id="@+id/NovoPacienteFragment"
         android:name="com.example.covid.NovoPacienteFragment"
-        android:label="NovoPacienteFragment"
+        android:label="@string/novo_paciente_fragment_label"
         tools:layout="@layout/fragment_novo_paciente">
         <action
             android:id="@+id/action_novoPacienteFragment_to_listaPacientesFragment"

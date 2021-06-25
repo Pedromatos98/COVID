@@ -1,6 +1,6 @@
 package com.example.covid
 
-import android.database.Cursor
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MenuItem
@@ -8,11 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import androidx.fragment.app.Fragment
-import androidx.loader.app.LoaderManager
-import androidx.loader.content.Loader
 import androidx.navigation.fragment.findNavController
 import com.example.covid.databinding.FragmentNovoPacienteBinding
 import com.google.android.material.snackbar.Snackbar
+
 
 /**
 * A simple [Fragment] subclass as the second destination in the navigation.
