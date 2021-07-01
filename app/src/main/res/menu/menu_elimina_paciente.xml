@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/action_corfirma_eliminar_paciente"
+        android:id="@+id/action_confirma_eliminar_paciente"
         android:icon="@android:drawable/ic_menu_delete"
         android:title="@string/eliminar_paciente"
         app:showAsAction="ifRoom" />

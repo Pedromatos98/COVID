@@ -22,7 +22,7 @@
         tools:text="António Silva" />
 
     <TextView
-        android:id="@+id/textViewNumeroUtente"
+        android:id="@+id/textView2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -38,7 +38,7 @@
         tools:text="123456789" />
 
     <TextView
-        android:id="@+id/textViewDataNascimento"
+        android:id="@+id/textView3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -49,7 +49,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewNumeroUtente"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
         tools:text="01/02/1980" />
 
     <TextView
@@ -64,6 +64,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDataNascimento"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
         tools:text="96123321" />
 </androidx.constraintlayout.widget.ConstraintLayout>

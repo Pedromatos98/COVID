@@ -15,6 +15,9 @@
         <action
             android:id="@+id/action_ListaPacientesFragment_to_EditaPacienteFragment"
             app:destination="@id/EditaPacienteFragment" />
+        <action
+            android:id="@+id/action_ListaPacientesFragment_to_eliminaPacienteFragment"
+            app:destination="@id/EliminaPacienteFragment" />
     </fragment>
     <fragment
         android:id="@+id/NovoPacienteFragment"
@@ -35,8 +38,12 @@
             app:destination="@id/ListaPacientesFragment" />
     </fragment>
     <fragment
-        android:id="@+id/eliminaPacienteFragment"
+        android:id="@+id/EliminaPacienteFragment"
         android:name="com.example.covid.EliminaPacienteFragment"
         android:label="fragment_elimina_paciente"
-        tools:layout="@layout/fragment_elimina_paciente" />
+        tools:layout="@layout/fragment_elimina_paciente" >
+        <action
+            android:id="@+id/action_eliminaPacienteFragment_to_ListaPacientesFragment"
+            app:destination="@id/ListaPacientesFragment" />
+    </fragment>
 </navigation>
