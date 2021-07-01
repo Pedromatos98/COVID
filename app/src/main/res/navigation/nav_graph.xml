@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_ListaPacientesFragment_to_NovoPacienteFragment"
             app:destination="@id/NovoPacienteFragment" />
+        <action
+            android:id="@+id/action_ListaPacientesFragment_to_editaPacienteFragment"
+            app:destination="@id/EditaPacienteFragment" />
     </fragment>
     <fragment
         android:id="@+id/NovoPacienteFragment"
@@ -20,6 +23,15 @@
         tools:layout="@layout/fragment_novo_paciente">
         <action
             android:id="@+id/action_novoPacienteFragment_to_listaPacientesFragment"
+            app:destination="@id/ListaPacientesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/EditaPacienteFragment"
+        android:name="com.example.covid.EditaPacienteFragment"
+        android:label="@string/editar_paciente_fragment_label"
+        tools:layout="@layout/fragment_edita_paciente" >
+        <action
+            android:id="@+id/action_EditaPacienteFragment_to_ListaPacientesFragment"
             app:destination="@id/ListaPacientesFragment" />
     </fragment>
 </navigation>
