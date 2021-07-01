@@ -5,6 +5,11 @@
     <item
         android:id="@+id/action_guardar_novo_paciente"
         android:icon="@android:drawable/ic_menu_save"
-        android:title="@string/guardar"
+        android:title="@string/Guardar"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_cancelar_novo_paciente"
+        android:icon="@android:drawable/ic_menu_close_clear_cancel"
+        android:title="@string/cancelar"
         app:showAsAction="ifRoom" />
 </menu>

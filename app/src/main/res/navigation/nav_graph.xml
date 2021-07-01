@@ -29,7 +29,7 @@
         android:id="@+id/EditaPacienteFragment"
         android:name="com.example.covid.EditaPacienteFragment"
         android:label="@string/editar_paciente_fragment_label"
-        tools:layout="@layout/fragment_edita_paciente" >
+        tools:layout="@layout/fragment_edita_paciente">
         <action
             android:id="@+id/action_EditaPacienteFragment_to_ListaPacientesFragment"
             app:destination="@id/ListaPacientesFragment" />
