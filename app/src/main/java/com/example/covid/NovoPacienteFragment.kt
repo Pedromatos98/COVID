@@ -73,12 +73,12 @@ class NovoPacienteFragment : Fragment() {
             return
         }
         val dataNascimento = editTextDataNascimento.text.toString()
-        if (numeroUtente.isEmpty()) {
+        if (dataNascimento.isEmpty()) {
             editTextDataNascimento.setError("Preencha a data de nascimento")
             return
         }
         val contacto = editTextContacto.text.toString()
-        if (numeroUtente.isEmpty()) {
+        if (contacto.isEmpty()) {
             editTextContacto.setError("Preencha o contacto")
             return
         }

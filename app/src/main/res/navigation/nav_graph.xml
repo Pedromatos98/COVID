@@ -34,4 +34,9 @@
             android:id="@+id/action_EditaPacienteFragment_to_ListaPacientesFragment"
             app:destination="@id/ListaPacientesFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/eliminaPacienteFragment"
+        android:name="com.example.covid.EliminaPacienteFragment"
+        android:label="fragment_elimina_paciente"
+        tools:layout="@layout/fragment_elimina_paciente" />
 </navigation>
