@@ -13,7 +13,7 @@
             android:id="@+id/action_ListaPacientesFragment_to_NovoPacienteFragment"
             app:destination="@id/NovoPacienteFragment" />
         <action
-            android:id="@+id/action_ListaPacientesFragment_to_editaPacienteFragment"
+            android:id="@+id/action_ListaPacientesFragment_to_EditaPacienteFragment"
             app:destination="@id/EditaPacienteFragment" />
     </fragment>
     <fragment

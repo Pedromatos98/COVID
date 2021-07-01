@@ -32,7 +32,7 @@ class ListaPacientesFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor>
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        DadosApp.listaPacientesFragment = this
+        DadosApp.fragment = this
         (activity as MainActivity).menuAtual = R.menu.menu_lista_pacientes
         _binding = FragmentListaPacientesBinding.inflate(inflater, container, false)
         return binding.root
@@ -56,7 +56,7 @@ class ListaPacientesFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor>
         findNavController().navigate(R.id.action_ListaPacientesFragment_to_NovoPacienteFragment)
     }
     fun navegaAlterarPaciente() {
-        //todo: navegar para o fragmento da edição de um livro
+        findNavController().navigate(R.id.action_ListaPacientesFragment_to_EditaPacienteFragment)
     }
 
     fun navegaEliminarPaciente() {

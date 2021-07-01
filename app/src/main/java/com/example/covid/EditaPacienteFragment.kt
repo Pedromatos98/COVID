@@ -38,7 +38,8 @@ class EditaPacienteFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         editTextNomePaciente = view.findViewById(R.id.editTextNomePaciente)
         editTextNumeroUtente = view.findViewById(R.id.editTextNumeroUtente)
-        editTextDataNascimento = view.findViewById(R.id.editTextContacto)
+        editTextDataNascimento = view.findViewById(R.id.editTextDataNascimento)
+        editTextContacto = view.findViewById(R.id.editTextContacto)
 
         editTextNomePaciente.setText(DadosApp.pacienteSelecionado!!.nomePaciente)
         editTextNumeroUtente.setText(DadosApp.pacienteSelecionado!!.numeroUtente)
