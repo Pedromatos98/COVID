@@ -33,7 +33,7 @@ class NovoPacienteFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        DadosApp.novoPacienteFragment = this
+        DadosApp.fragment = this
         (activity as MainActivity).menuAtual = R.menu.menu_novo_paciente
 
         _binding = FragmentNovoPacienteBinding.inflate(inflater, container, false)
@@ -111,6 +111,7 @@ class NovoPacienteFragment : Fragment() {
     fun processaOpcaoMenu(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_guardar_novo_paciente -> guardar()
+            R.id.action_cancelar_novo_paciente ->navegaListaPacientes()
             else -> return false
         }
 

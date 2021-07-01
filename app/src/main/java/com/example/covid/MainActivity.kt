@@ -67,6 +67,7 @@ class MainActivity : AppCompatActivity() {
             else -> when (menuAtual) {
                 R.menu.menu_lista_pacientes -> (DadosApp.fragment as ListaPacientesFragment).processaOpcaoMenu(item)
                 R.menu.menu_novo_paciente -> (DadosApp.fragment as NovoPacienteFragment).processaOpcaoMenu(item)
+                R.menu.menu_edita_paciente ->(DadosApp.fragment as EditaPacienteFragment).processaOpcaoMenu(item)
                 else -> false
             }
         }
