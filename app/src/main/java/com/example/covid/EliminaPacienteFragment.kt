@@ -1,14 +1,15 @@
 package com.example.covid
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+import android.widget.TextView
+import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 
 /**
  * A simple [Fragment] subclass.
@@ -16,40 +17,76 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class EliminaPacienteFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var textViewNomePaciente : TextView
+    private lateinit var textViewNumeroUtente : TextView
+    private lateinit var textViewDataNascimento : TextView
+    private lateinit var textViewContacto : TextView
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        DadosApp.fragment = this
+        (activity as MainActivity).menuAtual = R.menu.menu_elimina_paciente
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_elimina_paciente, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment EliminaPacienteFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic fun newInstance(param1: String, param2: String) =
-                EliminaPacienteFragment().apply {
-                    arguments = Bundle().apply {
-                        putString(ARG_PARAM1, param1)
-                        putString(ARG_PARAM2, param2)
-                    }
-                }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        textViewNomePaciente = view.findViewById(R.id.textViewNomePaciente)
+        textViewNumeroUtente = view.findViewById(R.id.textViewNumeroUtente)
+        textViewDataNascimento = view.findViewById(R.id.textViewDataNascimento)
+        textViewContacto = view.findViewById(R.id.textViewContacto)
+
+        val paciente = DadosApp.pacienteSelecionado!!
+        textViewNomePaciente.setText(paciente.nomePaciente)
+        textViewNumeroUtente.setText(paciente.numeroUtente)
+        textViewDataNascimento.setText(paciente.dataNascimento)
+        textViewContacto.setText(paciente.contacto)
+
     }
+
+    fun navegaListaPacientes(){
+        findNavController().navigate(R.id.action_eliminaPacienteFragment_to_ListaPacientesFragment)
+    }
+    fun elimina() {
+        val uriLivro = Uri.withAppendedPath(
+            ContentProviderCovid.ENDERECO_PACIENTES,
+            DadosApp.pacienteSelecionado!!.id.toString()
+        )
+
+        val registos = activity?.contentResolver?.delete(
+            uriLivro,
+            null,
+            null
+        )
+
+        if (registos != 1) {
+            Toast.makeText(
+                requireContext(),"Erro ao eliminar paciente",
+                Toast.LENGTH_LONG
+            ).show()
+            return
+        }
+
+        Toast.makeText(
+            requireContext(),
+            "Paciente eliminado com sucesso",
+            Toast.LENGTH_LONG
+        ).show()
+        navegaListaPacientes()
+    }
+    fun processaOpcaoMenu(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_confirma_eliminar_paciente -> elimina()
+            R.id.action_cancelar_eliminar_paciente -> navegaListaPacientes()
+            else -> return false
+        }
+
+        return true
+    }
+
+
 }

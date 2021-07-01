@@ -17,8 +17,8 @@ class AdapterPacientes (val fragment: ListaPacientesFragment) : RecyclerView.Ada
     class ViewHolderPaciente(itemView: View) : RecyclerView.ViewHolder(itemView),
         View.OnClickListener {
         private val textViewNomePaciente = itemView.findViewById<TextView>(R.id.textViewNomePaciente)
-        private val textViewNumeroUtente = itemView.findViewById<TextView>(R.id.textViewNumeroUtente)
-        private val textViewDataNascimento = itemView.findViewById<TextView>(R.id.textViewDataNascimento)
+        private val textViewNumeroUtente = itemView.findViewById<TextView>(R.id.textView2)
+        private val textViewDataNascimento = itemView.findViewById<TextView>(R.id.textView3)
         private val textViewContacto = itemView.findViewById<TextView>(R.id.textViewContacto)
 
         private lateinit var paciente: Paciente

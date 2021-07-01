@@ -60,7 +60,7 @@ class ListaPacientesFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor>
     }
 
     fun navegaEliminarPaciente() {
-        //todo: navegar para o fragmento para confirmar eliminação de um livro
+       findNavController().navigate(R.id.action_ListaPacientesFragment_to_eliminaPacienteFragment)
     }
     fun processaOpcaoMenu(item: MenuItem): Boolean {
         when (item.itemId) {
