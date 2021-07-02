@@ -17,7 +17,7 @@
         android:layout_marginEnd="@dimen/margem_campos"
         android:layout_marginRight="@dimen/margem_campos"
         android:text="@string/nome_paciente"
-        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/cor_destaque" />
 
     <TextView
@@ -29,7 +29,7 @@
         android:layout_marginTop="@dimen/margem_campos"
         android:layout_marginEnd="@dimen/margem_ecran"
         android:layout_marginRight="@dimen/margem_ecran"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         tools:text="António Simões" />
 
     <TextView
@@ -42,7 +42,7 @@
         android:layout_marginEnd="@dimen/margem_ecran"
         android:layout_marginRight="@dimen/margem_ecran"
         android:text="@string/numero_utente"
-        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/cor_destaque" />
 
     <TextView
@@ -54,7 +54,7 @@
         android:layout_marginTop="@dimen/margem_campos"
         android:layout_marginEnd="@dimen/margem_ecran"
         android:layout_marginRight="@dimen/margem_ecran"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         tools:text="936852741" />
 
     <TextView
@@ -67,7 +67,7 @@
         android:layout_marginEnd="@dimen/margem_ecran"
         android:layout_marginRight="@dimen/margem_ecran"
         android:text="@string/data_nascimento"
-        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/cor_destaque" />
 
     <TextView
@@ -79,11 +79,11 @@
         android:layout_marginTop="@dimen/margem_campos"
         android:layout_marginEnd="@dimen/margem_ecran"
         android:layout_marginRight="@dimen/margem_ecran"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         tools:text="01-01-1995" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margem_ecran"
@@ -92,6 +92,7 @@
         android:layout_marginEnd="@dimen/margem_ecran"
         android:layout_marginRight="@dimen/margem_ecran"
         android:text="@string/contacto"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/cor_destaque" />
 
     <TextView
@@ -103,6 +104,6 @@
         android:layout_marginTop="@dimen/margem_campos"
         android:layout_marginEnd="@dimen/margem_ecran"
         android:layout_marginRight="@dimen/margem_ecran"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         tools:text="919876543" />
 </LinearLayout>

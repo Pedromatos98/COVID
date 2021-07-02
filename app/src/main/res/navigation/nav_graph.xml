@@ -40,8 +40,8 @@
     <fragment
         android:id="@+id/EliminaPacienteFragment"
         android:name="com.example.covid.EliminaPacienteFragment"
-        android:label="fragment_elimina_paciente"
-        tools:layout="@layout/fragment_elimina_paciente" >
+        android:label="@string/eliminar_paciente_fragment_label"
+        tools:layout="@layout/fragment_elimina_paciente">
         <action
             android:id="@+id/action_eliminaPacienteFragment_to_ListaPacientesFragment"
             app:destination="@id/ListaPacientesFragment" />
