@@ -3,13 +3,14 @@ package com.example.covid
 import android.content.ContentValues
 import android.database.Cursor
 import android.provider.BaseColumns
+import java.util.*
 
-data class Paciente (var id: Long = -1, var nomePaciente: String, var numeroUtente: String, var dataNascimento: String, var contacto: String)  {
+data class Paciente(var id: Long = -1, var nomePaciente: String, var numeroUtente: String, var dataNascimento: Date, var contacto: String)  {
     fun toContentValues(): ContentValues {
         val valores = ContentValues().apply {
             put(TabelaPacientes.CAMPO_NOME_PACIENTE, nomePaciente)
             put(TabelaPacientes.CAMPO_NUMERO_UTENTE, numeroUtente)
-            put(TabelaPacientes.CAMPO_DATA_NASCIMENTO, dataNascimento)
+            put(TabelaPacientes.CAMPO_DATA_NASCIMENTO, dataNascimento.toString())
             put(TabelaPacientes.CAMPO_CONTACTO, contacto)
 
         }
@@ -33,7 +34,7 @@ data class Paciente (var id: Long = -1, var nomePaciente: String, var numeroUten
             val contacto = cursor.getString(colContacto)
 
 
-            return Paciente(id, nomePaciente, numeroUtente, dataNascimento, contacto)
+            return Paciente(id, nomePaciente, numeroUtente, Date(dataNascimento), contacto)
         }
     }
 }

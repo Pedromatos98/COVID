@@ -64,9 +64,11 @@
                             android:layout_marginTop="@dimen/margem_campos"
                             android:hint="@string/contacto"
                             android:inputType="phone" />
+
                     </com.google.android.material.textfield.TextInputLayout>
                 </com.google.android.material.textfield.TextInputLayout>
             </com.google.android.material.textfield.TextInputLayout>
         </com.google.android.material.textfield.TextInputLayout>
+
     </com.google.android.material.textfield.TextInputLayout>
 </LinearLayout>

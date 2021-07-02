@@ -8,7 +8,7 @@ import android.provider.BaseColumns
 class TabelaPacientes (db: SQLiteDatabase) {
     private val db: SQLiteDatabase = db
     fun cria() {
-        db.execSQL("CREATE TABLE $NOME_TABELA (${BaseColumns._ID} INTEGER PRIMARY KEY AUTOINCREMENT, $CAMPO_NOME_PACIENTE TEXT NOT NULL, $CAMPO_NUMERO_UTENTE INTEGER NOT NULL, $CAMPO_DATA_NASCIMENTO DATE NOT NULl,$CAMPO_CONTACTO TEXT NOT NULL )")
+        db.execSQL("CREATE TABLE $NOME_TABELA (${BaseColumns._ID} INTEGER PRIMARY KEY AUTOINCREMENT, $CAMPO_NOME_PACIENTE TEXT NOT NULL, $CAMPO_NUMERO_UTENTE INTEGER NOT NULL, $CAMPO_DATA_NASCIMENTO INTEGER NOT NULl,$CAMPO_CONTACTO TEXT NOT NULL )")
     }
     fun insert(values: ContentValues): Long {
         return db.insert(NOME_TABELA, null, values)

@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import java.util.*
 
 class AdapterPacientes (val fragment: ListaPacientesFragment) : RecyclerView.Adapter<AdapterPacientes.ViewHolderPaciente>() {
     public var cursor: Cursor? = null
@@ -17,8 +18,8 @@ class AdapterPacientes (val fragment: ListaPacientesFragment) : RecyclerView.Ada
     class ViewHolderPaciente(itemView: View) : RecyclerView.ViewHolder(itemView),
         View.OnClickListener {
         private val textViewNomePaciente = itemView.findViewById<TextView>(R.id.textViewNomePaciente)
-        private val textViewNumeroUtente = itemView.findViewById<TextView>(R.id.textView2)
-        private val textViewDataNascimento = itemView.findViewById<TextView>(R.id.textView3)
+        private val textViewNumeroUtente = itemView.findViewById<TextView>(R.id.textViewNumeroUtente)
+        private val textViewDataNascimento = itemView.findViewById<TextView>(R.id.textViewDataNascimento)
         private val textViewContacto = itemView.findViewById<TextView>(R.id.textViewContacto)
 
         private lateinit var paciente: Paciente
@@ -29,9 +30,14 @@ class AdapterPacientes (val fragment: ListaPacientesFragment) : RecyclerView.Ada
 
         fun atualizaPaciente(Paciente: Paciente) {
             this.paciente = Paciente
+            val dataHoje : Date = Date()
+            val dataNasc = paciente.dataNascimento
+            val calcular_idade = dataHoje.getTime() - dataNasc.getTime()
+            val idade = calcular_idade/(1000L*60*60*24*365)
+
             textViewNomePaciente.text = Paciente.nomePaciente
             textViewNumeroUtente.text = Paciente.numeroUtente
-            textViewDataNascimento.text = Paciente.dataNascimento
+            textViewDataNascimento.text = idade.toString()
             textViewContacto.text = Paciente.contacto
         }
 

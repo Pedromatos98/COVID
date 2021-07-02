@@ -43,7 +43,7 @@ class EliminaPacienteFragment : Fragment() {
         val paciente = DadosApp.pacienteSelecionado!!
         textViewNomePaciente.setText(paciente.nomePaciente)
         textViewNumeroUtente.setText(paciente.numeroUtente)
-        textViewDataNascimento.setText(paciente.dataNascimento)
+        textViewDataNascimento.setText(paciente.dataNascimento.toString())
         textViewContacto.setText(paciente.contacto)
 
     }

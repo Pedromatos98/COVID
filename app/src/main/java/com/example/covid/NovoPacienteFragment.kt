@@ -6,11 +6,13 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CalendarView
 import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.covid.databinding.FragmentNovoPacienteBinding
 import com.google.android.material.snackbar.Snackbar
+import java.util.*
 
 
 /**
@@ -74,7 +76,6 @@ class NovoPacienteFragment : Fragment() {
         }
         val dataNascimento = editTextDataNascimento.text.toString()
         if (dataNascimento.isEmpty()) {
-            editTextDataNascimento.setError("Preencha a data de nascimento")
             return
         }
         val contacto = editTextContacto.text.toString()
@@ -87,7 +88,7 @@ class NovoPacienteFragment : Fragment() {
         val paciente = Paciente(
             nomePaciente = nomePaciente,
             numeroUtente = numeroUtente,
-            dataNascimento = dataNascimento,
+            dataNascimento = Date(dataNascimento) ,
             contacto = contacto
         )
 

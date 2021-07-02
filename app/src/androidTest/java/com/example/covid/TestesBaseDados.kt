@@ -9,6 +9,7 @@ import org.junit.runner.RunWith
 
 import org.junit.Assert.*
 import org.junit.Before
+import java.util.*
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -105,7 +106,7 @@ class TestesBaseDados {
         val paciente = Paciente(
             nomePaciente = "António Ramos",
             numeroUtente = "123456789",
-            dataNascimento = "01/07/1990",
+            dataNascimento = Date(1990 - 1900, 1, 7),
             contacto = "961234567"
         )
         paciente.id = inserePaciente(tabelaPacientes, paciente)
@@ -115,18 +116,24 @@ class TestesBaseDados {
         db.close()
     }
 
+
     @Test
     fun consegueAlterarPacientes() {
         val db = getBdCovidOpenHelper().writableDatabase
         val tabelaPacientes = TabelaPacientes(db)
 
         val paciente =
-            Paciente(nomePaciente = "?", numeroUtente = "?", dataNascimento = "?", contacto = "?")
+            Paciente(
+                nomePaciente = "?",
+                numeroUtente = "?",
+                dataNascimento = Date(),
+                contacto = "?"
+            )
         paciente.id = inserePaciente(tabelaPacientes, paciente)
 
         paciente.nomePaciente = "José Costa"
         paciente.numeroUtente = "987654321"
-        paciente.dataNascimento = "10-10-2000"
+        paciente.dataNascimento = Date(2000 - 1900, 10, 10)
         paciente.contacto = "969876543"
 
         val registosAlterados = tabelaPacientes.update(
@@ -142,13 +149,19 @@ class TestesBaseDados {
         db.close()
     }
 
+
     @Test
     fun consegueEliminarPacientes() {
         val db = getBdCovidOpenHelper().writableDatabase
 
         val tabelaPacientes = TabelaPacientes(db)
         val paciente =
-            Paciente(nomePaciente = "?", numeroUtente = "?", dataNascimento = "?", contacto = "?")
+            Paciente(
+                nomePaciente = "?",
+                numeroUtente = "?",
+                dataNascimento = Date(),
+                contacto = "?"
+            )
         paciente.id = inserePaciente(tabelaPacientes, paciente)
 
         val registosEliminados = tabelaPacientes.delete(
@@ -169,7 +182,7 @@ class TestesBaseDados {
         val paciente = Paciente(
             nomePaciente = "Mário Batista",
             numeroUtente = "123454321",
-            dataNascimento = "20-12-1980",
+            dataNascimento = Date(1980 - 1900, 12, 20),
             contacto = "961234987"
         )
 
@@ -181,15 +194,18 @@ class TestesBaseDados {
     }
 
 
-    //
-
     @Test
     fun consegueInserirInfetado() {
         val db = getBdCovidOpenHelper().writableDatabase
 
         val tabelaPacientes = TabelaPacientes(db)
         val paciente =
-            Paciente(nomePaciente = "Artur Silva", numeroUtente = "198273654", dataNascimento = "12-09-1992",contacto = "969182736")
+            Paciente(
+                nomePaciente = "Artur Silva",
+                numeroUtente = "198273654",
+                dataNascimento = Date(1992 - 1900, 9, 12),
+                contacto = "969182736"
+            )
         paciente.id = inserePaciente(tabelaPacientes, paciente)
 
 
@@ -210,9 +226,9 @@ class TestesBaseDados {
         val db = getBdCovidOpenHelper().writableDatabase
         val tabelaPacientes = TabelaPacientes(db)
 
-        val paciente1 = Paciente(nomePaciente = "António Ramos", numeroUtente = "123456789", dataNascimento = "01/07/1990", contacto = "961234567")
+        val paciente1 = Paciente(nomePaciente = "António Ramos", numeroUtente = "123456789", dataNascimento = Date(1990-1900,7,1), contacto = "961234567")
         paciente1.id = inserePaciente(tabelaPacientes,paciente1)
-        val paciente2 = Paciente(nomePaciente = "João Santos", numeroUtente = "234567891", dataNascimento = "31/12/1985", contacto = "939876543")
+        val paciente2 = Paciente(nomePaciente = "João Santos", numeroUtente = "234567891", dataNascimento = Date(1985-1900,11,31), contacto = "939876543")
         paciente2.id = inserePaciente(tabelaPacientes,paciente2)
 
         val tabelaInfetados = TabelaInfetados(db)
@@ -244,7 +260,7 @@ class TestesBaseDados {
         val paciente = Paciente(
             nomePaciente = "Raúl Furtado ",
             numeroUtente = "918273654",
-            dataNascimento = "05-01-1985",
+            dataNascimento = Date(1985-1900,1,5),
             contacto = "966543219"
         )
         paciente.id = inserePaciente(tabelaPacientes, paciente)
@@ -272,7 +288,7 @@ class TestesBaseDados {
         val paciente = Paciente(
             nomePaciente = "Bernardo Mota",
             numeroUtente = "12987654",
-            dataNascimento = "19-07-1995",contacto = "921345678")
+            dataNascimento = Date(1995-1900,7,19), contacto = "921345678")
         paciente.id = inserePaciente(tabelaPacientes, paciente)
 
         val tabelaInfetados = TabelaInfetados(db)

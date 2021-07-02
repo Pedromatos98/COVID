@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import java.util.*
 
 
 /**
@@ -43,7 +44,7 @@ class EditaPacienteFragment : Fragment() {
 
         editTextNomePaciente.setText(DadosApp.pacienteSelecionado!!.nomePaciente)
         editTextNumeroUtente.setText(DadosApp.pacienteSelecionado!!.numeroUtente)
-        editTextDataNascimento.setText(DadosApp.pacienteSelecionado!!.dataNascimento)
+        editTextDataNascimento.setText(DadosApp.pacienteSelecionado!!.dataNascimento.toString())
         editTextContacto.setText(DadosApp.pacienteSelecionado!!.contacto)
     }
     fun navegaListaPacientes(){
@@ -65,7 +66,6 @@ class EditaPacienteFragment : Fragment() {
         }
         val dataNascimento = editTextDataNascimento.text.toString()
         if (dataNascimento.isEmpty()) {
-            editTextDataNascimento.setError("")
             editTextDataNascimento.requestFocus()
             return
         }
@@ -81,7 +81,7 @@ class EditaPacienteFragment : Fragment() {
         val paciente = DadosApp.pacienteSelecionado!!
         paciente.nomePaciente = nomePaciente
         paciente.numeroUtente = numeroUtente
-        paciente.dataNascimento = dataNascimento
+        paciente.dataNascimento = Date(dataNascimento)
         paciente.contacto = contacto
 
         val uriPacientes = Uri.withAppendedPath(
@@ -122,3 +122,5 @@ class EditaPacienteFragment : Fragment() {
         return true
     }
 }
+
+
