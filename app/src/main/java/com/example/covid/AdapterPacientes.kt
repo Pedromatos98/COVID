@@ -19,7 +19,7 @@ class AdapterPacientes (val fragment: ListaPacientesFragment) : RecyclerView.Ada
         View.OnClickListener {
         private val textViewNomePaciente = itemView.findViewById<TextView>(R.id.textViewNomePaciente)
         private val textViewNumeroUtente = itemView.findViewById<TextView>(R.id.textViewNumeroUtente)
-        private val textViewDataNascimento = itemView.findViewById<TextView>(R.id.textViewDataNascimento)
+        private val textViewDataNascimento = itemView.findViewById<TextView>(R.id.textViewIdade)
         private val textViewContacto = itemView.findViewById<TextView>(R.id.textViewContacto)
 
         private lateinit var paciente: Paciente
