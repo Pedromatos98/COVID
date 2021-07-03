@@ -29,7 +29,7 @@ class AdapterInfetados (val fragment: ListaInfetadosFragment) : RecyclerView.Ada
         fun atualizaInfetado(infetado: Infetado) {
             this.infetado = infetado
 
-            textViewDataInfecao.text = infetado.dataInfecao
+            textViewDataInfecao.text = infetado.dataInfecao.toString()
             textViewSintomas.text = infetado.sintomas
             textViewPaciente.text = infetado.nomePaciente
 
