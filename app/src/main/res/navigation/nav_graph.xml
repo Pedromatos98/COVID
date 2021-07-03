@@ -65,8 +65,8 @@
     <fragment
         android:id="@+id/listaInfetadosFragment"
         android:name="com.example.covid.ListaInfetadosFragment"
-        android:label="fragment_lista_infetados"
-        tools:layout="@layout/fragment_lista_infetados" >
+        android:label="@string/lista_infetados_fragment_label"
+        tools:layout="@layout/fragment_lista_infetados">
         <action
             android:id="@+id/action_listaInfetadosFragment_to_menuPrincipalFragment"
             app:destination="@id/menuPrincipalFragment" />
