@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/ListaPacientesFragment">
+    app:startDestination="@id/menuPrincipalFragment">
     <fragment
         android:id="@+id/ListaPacientesFragment"
         android:name="com.example.covid.ListaPacientesFragment"
@@ -18,6 +18,9 @@
         <action
             android:id="@+id/action_ListaPacientesFragment_to_eliminaPacienteFragment"
             app:destination="@id/EliminaPacienteFragment" />
+        <action
+            android:id="@+id/action_ListaPacientesFragment_to_menuPrincipalFragment"
+            app:destination="@id/menuPrincipalFragment" />
     </fragment>
     <fragment
         android:id="@+id/NovoPacienteFragment"
@@ -44,6 +47,15 @@
         tools:layout="@layout/fragment_elimina_paciente">
         <action
             android:id="@+id/action_eliminaPacienteFragment_to_ListaPacientesFragment"
+            app:destination="@id/ListaPacientesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuPrincipalFragment"
+        android:name="com.example.covid.MenuPrincipalFragment"
+        android:label="fragment_menu_principal"
+        tools:layout="@layout/fragment_menu_principal" >
+        <action
+            android:id="@+id/action_menuPrincipalFragment_to_ListaPacientesFragment"
             app:destination="@id/ListaPacientesFragment" />
     </fragment>
 </navigation>

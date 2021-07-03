@@ -71,7 +71,7 @@
         android:textColor="@color/cor_destaque" />
 
     <TextView
-        android:id="@+id/textViewDataNascimento"
+        android:id="@+id/textViewIdade"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margem_ecran"

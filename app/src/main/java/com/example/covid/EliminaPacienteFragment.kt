@@ -37,7 +37,7 @@ class EliminaPacienteFragment : Fragment() {
 
         textViewNomePaciente = view.findViewById(R.id.textViewNomePaciente)
         textViewNumeroUtente = view.findViewById(R.id.textViewNumeroUtente)
-        textViewDataNascimento = view.findViewById(R.id.textViewDataNascimento)
+        textViewDataNascimento = view.findViewById(R.id.textViewIdade)
         textViewContacto = view.findViewById(R.id.textViewContacto)
 
         val paciente = DadosApp.pacienteSelecionado!!
