@@ -10,12 +10,12 @@
         android:title="@string/novo_infetado"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_alterar_paciente"
+        android:id="@+id/action_alterar_infetado"
         android:icon="@android:drawable/ic_menu_edit"
         android:title="@string/alterar_infetado"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_eliminar_paciente"
+        android:id="@+id/action_eliminar_infetado"
         android:title="@string/eliminar_infetado"
         app:showAsAction="ifRoom" />
     <item

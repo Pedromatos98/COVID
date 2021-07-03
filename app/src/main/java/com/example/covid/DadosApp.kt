@@ -8,5 +8,6 @@ class DadosApp {
             lateinit var activity: MainActivity
             lateinit var fragment: Fragment
             var pacienteSelecionado : Paciente? = null
+            var infetadoSelecionado : Infetado? = null
         }
 }
