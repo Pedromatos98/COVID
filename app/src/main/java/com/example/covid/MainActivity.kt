@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var menu: Menu
 
-    var menuAtual = R.menu.menu_lista_pacientes
+    var menuAtual = R.menu.menu_principal
     set(value){
         field = value
         invalidateOptionsMenu()

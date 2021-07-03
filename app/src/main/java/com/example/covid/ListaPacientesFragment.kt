@@ -62,6 +62,7 @@ class ListaPacientesFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor>
     fun navegaEliminarPaciente() {
        findNavController().navigate(R.id.action_ListaPacientesFragment_to_eliminaPacienteFragment)
     }
+
     fun processaOpcaoMenu(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_novo_paciente -> navegaNovoPaciente()

@@ -3,6 +3,7 @@ package com.example.covid
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
@@ -25,6 +26,8 @@ class MenuPrincipalFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        DadosApp.fragment = this
+        (activity as MainActivity).menuAtual = R.menu.menu_principal
         // Inflate the layout for this fragment
         val v = inflater.inflate(R.layout.fragment_menu_principal, container, false)
 
@@ -34,6 +37,5 @@ class MenuPrincipalFragment : Fragment() {
         }
         return v
     }
-
 
 }
