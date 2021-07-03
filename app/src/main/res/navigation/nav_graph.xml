@@ -57,5 +57,17 @@
         <action
             android:id="@+id/action_menuPrincipalFragment_to_ListaPacientesFragment"
             app:destination="@id/ListaPacientesFragment" />
+        <action
+            android:id="@+id/action_menuPrincipalFragment_to_listaInfetadosFragment"
+            app:destination="@id/listaInfetadosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listaInfetadosFragment"
+        android:name="com.example.covid.ListaInfetadosFragment"
+        android:label="fragment_lista_infetados"
+        tools:layout="@layout/fragment_lista_infetados" >
+        <action
+            android:id="@+id/action_listaInfetadosFragment_to_menuPrincipalFragment"
+            app:destination="@id/menuPrincipalFragment" />
     </fragment>
 </navigation>
