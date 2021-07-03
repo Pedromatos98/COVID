@@ -53,6 +53,7 @@
     <fragment
         android:id="@+id/menuPrincipalFragment"
         android:name="com.example.covid.MenuPrincipalFragment"
+        android:label="@string/app_name"
         tools:layout="@layout/fragment_menu_principal">
         <action
             android:id="@+id/action_menuPrincipalFragment_to_ListaPacientesFragment"

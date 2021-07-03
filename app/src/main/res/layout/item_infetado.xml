@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/TextViewNomePaciente"
+        android:id="@+id/textViewNomePaciente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -25,7 +25,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toEndOf="@+id/textView13"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Paulo Silva" />
+        tools:text="Paulo Santos" />
 
     <TextView
         android:id="@+id/textView5"
@@ -46,7 +46,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/TextViewNomePaciente"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNomePaciente"
         tools:text="03/07/2021" />
 
     <TextView

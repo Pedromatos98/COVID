@@ -5,8 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.navigation.fragment.findNavController
+import com.example.covid.databinding.FragmentMenuPrincipalBinding
 
 /**
  * A simple [Fragment] subclass.
@@ -14,7 +14,12 @@ import androidx.navigation.fragment.findNavController
  * create an instance of this fragment.
  */
 class MenuPrincipalFragment : Fragment() {
+    private var _binding: FragmentMenuPrincipalBinding? = null
 
+
+    // This property is only valid between onCreateView and
+    // onDestroyView.
+    private val binding get() = _binding!!
 
 
     override fun onCreateView(
@@ -24,15 +29,23 @@ class MenuPrincipalFragment : Fragment() {
         DadosApp.fragment = this
         (activity as MainActivity).menuAtual = R.menu.menu_principal
         // Inflate the layout for this fragment
-        val v = inflater.inflate(R.layout.fragment_menu_principal, container, false)
+        _binding = FragmentMenuPrincipalBinding.inflate(inflater, container, false)
 
-        val botaoPacientes = v.findViewById<Button>(R.id.buttonPacientes)
+
+
+        val botaoPacientes = binding.buttonPacientes
         botaoPacientes.setOnClickListener {
             findNavController().navigate(R.id.action_menuPrincipalFragment_to_ListaPacientesFragment)
-
         }
-
-        return v
+        val botaoInfetados = binding.buttonInfetados
+        botaoInfetados.setOnClickListener {
+            findNavController().navigate(R.id.action_menuPrincipalFragment_to_listaInfetadosFragment)
+        }
+        return binding.root
     }
-
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }
+
