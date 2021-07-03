@@ -3,4 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListaInfetadosFragment"/>
+    tools:context=".ListaInfetadosFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RecyclerViewInfetados"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margem_ecran" />
+</FrameLayout>
