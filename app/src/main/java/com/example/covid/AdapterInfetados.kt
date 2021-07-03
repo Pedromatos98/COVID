@@ -36,17 +36,25 @@ class AdapterInfetados (val fragment: ListaInfetadosFragment) : RecyclerView.Ada
         }
 
         override fun onClick(v: View?) {
-
+            selecionado?.desSeleciona()
+            seleciona()
         }
 
-        /**
-         * Called when a view has been clicked.
-         *
-         * @param v The view that was clicked.
-         */
+        private fun seleciona() {
+            selecionado = this
+            itemView.setBackgroundResource(R.color.cor_selecao)
+            DadosApp.infetadoSelecionado = infetado
+            DadosApp.activity.atualizaMenuListaInfetados(true)
+        }
 
+        private fun desSeleciona() {
+            selecionado = null
+            itemView.setBackgroundResource(android.R.color.white)
+        }
 
-
+        companion object {
+            var selecionado : ViewHolderInfetado? = null
+        }
     }
 
     /**

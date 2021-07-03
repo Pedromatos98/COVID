@@ -81,4 +81,8 @@ class MainActivity : AppCompatActivity() {
         menu.findItem(R.id.action_alterar_paciente).setVisible(mostraBotoesAlterarEliminar)
         menu.findItem(R.id.action_eliminar_paciente).setVisible(mostraBotoesAlterarEliminar)
     }
+    fun atualizaMenuListaInfetados(mostraBotoesAlterarEliminar : Boolean) {
+        menu.findItem(R.id.action_alterar_infetado).setVisible(mostraBotoesAlterarEliminar)
+        menu.findItem(R.id.action_eliminar_infetado).setVisible(mostraBotoesAlterarEliminar)
+    }
 }
