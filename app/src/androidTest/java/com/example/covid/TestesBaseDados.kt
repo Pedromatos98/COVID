@@ -212,7 +212,8 @@ class TestesBaseDados {
         val infetado = Infetado(
             dataInfecao = "10-06-2021",
             sintomas = "falta de paladar ",
-            idPaciente = paciente.id
+            idPaciente = paciente.id,
+            nomePaciente = "Albano Costa"
         )
         infetado.id = inserePaciente(tabelaPacientes, paciente)
 
@@ -232,12 +233,13 @@ class TestesBaseDados {
         paciente2.id = inserePaciente(tabelaPacientes,paciente2)
 
         val tabelaInfetados = TabelaInfetados(db)
-        val infetado = Infetado(dataInfecao = "?",sintomas = "?",idPaciente = paciente1.id)
+        val infetado = Infetado(dataInfecao = "?",sintomas = "?",idPaciente = paciente1.id,nomePaciente = paciente1.nomePaciente)
         infetado.id = insereInfetado(tabelaInfetados, infetado)
 
         infetado.dataInfecao = "10-05-2021"
         infetado.sintomas = "dor de cabeça"
         infetado.idPaciente = paciente2.id
+        infetado.nomePaciente =paciente2.nomePaciente
 
         val registosAlterados = tabelaInfetados.update(
             infetado.toContentValues(),
@@ -266,7 +268,7 @@ class TestesBaseDados {
         paciente.id = inserePaciente(tabelaPacientes, paciente)
 
         val tabelaInfetados = TabelaInfetados(db)
-        val infetado = Infetado(dataInfecao = "?", sintomas = "?", idPaciente = paciente.id)
+        val infetado = Infetado(dataInfecao = "?", sintomas = "?", idPaciente = paciente.id,nomePaciente = paciente.nomePaciente)
         infetado.id = insereInfetado(tabelaInfetados, infetado)
 
         val registosEliminados = tabelaInfetados.delete(
@@ -295,7 +297,8 @@ class TestesBaseDados {
         val infetado = Infetado(
             dataInfecao = "09-06-2021",
             sintomas = "dificuldades respiratórias",
-            idPaciente = paciente.id
+            idPaciente = paciente.id,
+            nomePaciente = paciente.nomePaciente
         )
         infetado.id = insereInfetado(tabelaInfetados, infetado)
 

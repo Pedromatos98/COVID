@@ -17,6 +17,7 @@ class AdapterInfetados (val fragment: ListaInfetadosFragment) : RecyclerView.Ada
     class ViewHolderInfetado(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
         private val textViewDataInfecao = itemView.findViewById<TextView>(R.id.textViewDataInfecao)
         private val textViewSintomas = itemView.findViewById<TextView>(R.id.textViewSintomas)
+        private val textViewPaciente = itemView.findViewById<TextView>(R.id.textViewNomePaciente)
 
 
         private lateinit var infetado: Infetado
@@ -30,6 +31,7 @@ class AdapterInfetados (val fragment: ListaInfetadosFragment) : RecyclerView.Ada
 
             textViewDataInfecao.text = infetado.dataInfecao
             textViewSintomas.text = infetado.sintomas
+            textViewPaciente.text = infetado.nomePaciente
 
         }
 
