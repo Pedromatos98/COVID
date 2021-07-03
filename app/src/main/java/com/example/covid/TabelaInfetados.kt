@@ -32,7 +32,45 @@ class TabelaInfetados (db: SQLiteDatabase) {
         having: String?,
         orderBy: String?
     ): Cursor? {
-        return db.query(NOME_TABELA, columns, selection, selectionArgs, groupBy, having, orderBy)
+        val ultimaColuna = columns.size - 1
+
+        var posColNomeCategoria = -1 // -1 indica que a coluna não foi pedida
+        for (i in 0..ultimaColuna) {
+            if (columns[i] == CAMPO_EXTERNO_NOME_PACIENTE) {
+                posColNomeCategoria = i
+                break
+            }
+        }
+
+        if (posColNomeCategoria == -1) {
+            return db.query(NOME_TABELA, columns, selection, selectionArgs, groupBy, having, orderBy)
+        }
+
+        var colunas = ""
+        for (i in 0..ultimaColuna) {
+            if (i > 0) colunas += ","
+
+            colunas += if (i == posColNomeCategoria) {
+                "${TabelaPacientes.NOME_TABELA}.${TabelaPacientes.CAMPO_NOME_PACIENTE} AS $CAMPO_EXTERNO_NOME_PACIENTE"
+            } else {
+                "${NOME_TABELA}.${columns[i]}"
+            }
+        }
+
+        val tabelas = "$NOME_TABELA INNER JOIN ${TabelaPacientes.NOME_TABELA} ON ${TabelaPacientes.NOME_TABELA}.${BaseColumns._ID}=$CAMPO_ID_PACIENTE"
+
+        var sql = "SELECT $colunas FROM $tabelas"
+
+        if (selection != null) sql += " WHERE $selection"
+
+        if (groupBy != null) {
+            sql += " GROUP BY $groupBy"
+            if (having != null) " HAVING $having"
+        }
+
+        if (orderBy != null) sql += " ORDER BY $orderBy"
+
+        return db.rawQuery(sql, selectionArgs)
     }
 
     companion object {
@@ -40,8 +78,9 @@ class TabelaInfetados (db: SQLiteDatabase) {
         const val CAMPO_DATA_INFECAO = "data_infecao"
         const val CAMPO_SINTOMAS = "sintomas"
         const val CAMPO_ID_PACIENTE ="id_paciente"
+        const val CAMPO_EXTERNO_NOME_PACIENTE ="nome_paciente"
 
         val TODAS_COLUNAS = arrayOf(BaseColumns._ID, CAMPO_DATA_INFECAO, CAMPO_SINTOMAS,
-            CAMPO_ID_PACIENTE)
+            CAMPO_ID_PACIENTE,CAMPO_EXTERNO_NOME_PACIENTE)
     }
 }
