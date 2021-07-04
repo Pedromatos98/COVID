@@ -19,4 +19,6 @@
     <string name="novo_infetado">Novo infetado</string>
     <string name="alterar_infetado">Alterar Infetado</string>
     <string name="eliminar_infetado">Eliminar infetado</string>
+    <string name="data_de_infecao">Data de Infeção</string>
+    <string name="sintomas">Sintomas</string>
 </resources>

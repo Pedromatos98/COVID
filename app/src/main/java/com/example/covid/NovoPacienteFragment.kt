@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CalendarView
 import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -84,7 +83,6 @@ class NovoPacienteFragment : Fragment() {
             return
         }
 
-
         val paciente = Paciente(
             nomePaciente = nomePaciente,
             numeroUtente = numeroUtente,
@@ -119,4 +117,10 @@ class NovoPacienteFragment : Fragment() {
         return true
     }
 
+
+
 }
+
+
+
+
