@@ -77,8 +77,8 @@
     <fragment
         android:id="@+id/novoInfetadoFragment"
         android:name="com.example.covid.NovoInfetadoFragment"
-        android:label="fragment_novo_infetado"
-        tools:layout="@layout/fragment_novo_infetado" >
+        android:label="@string/novo_infetado_fragment_label"
+        tools:layout="@layout/fragment_novo_infetado">
         <action
             android:id="@+id/action_novoInfetadoFragment_to_listaInfetadosFragment"
             app:destination="@id/listaInfetadosFragment" />

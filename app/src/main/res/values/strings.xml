@@ -16,6 +16,7 @@
     <string name="editar_paciente_fragment_label">Editar Paciente</string>
     <string name="eliminar_paciente_fragment_label">Eliminar Paciente</string>
     <string name="lista_infetados_fragment_label">Infetados</string>
+    <string name="novo_infetado_fragment_label">Novo Infetado</string>
     <string name="novo_infetado">Novo infetado</string>
     <string name="alterar_infetado">Alterar Infetado</string>
     <string name="eliminar_infetado">Eliminar infetado</string>

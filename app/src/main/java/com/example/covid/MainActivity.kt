@@ -48,6 +48,9 @@ class MainActivity : AppCompatActivity() {
         if (menuAtual == R.menu.menu_lista_pacientes) {
             atualizaMenuListaPacientes(false)
         }
+        if (menuAtual == R.menu.menu_lista_infetados) {
+            atualizaMenuListaInfetados(false)
+        }
         return true
     }
 
@@ -61,10 +64,13 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             else -> when (menuAtual) {
+                R.menu.menu_lista_infetados ->(DadosApp.fragment as ListaInfetadosFragment).processaOpcaoMenu(item)
                 R.menu.menu_lista_pacientes -> (DadosApp.fragment as ListaPacientesFragment).processaOpcaoMenu(item)
                 R.menu.menu_novo_paciente -> (DadosApp.fragment as NovoPacienteFragment).processaOpcaoMenu(item)
                 R.menu.menu_edita_paciente ->(DadosApp.fragment as EditaPacienteFragment).processaOpcaoMenu(item)
                 R.menu.menu_elimina_paciente ->(DadosApp.fragment as EliminaPacienteFragment).processaOpcaoMenu(item)
+
+
                 else -> false
             }
         }

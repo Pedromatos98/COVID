@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.loader.app.LoaderManager
 import androidx.loader.content.CursorLoader
 import androidx.loader.content.Loader
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.covid.databinding.FragmentListaInfetadosBinding
@@ -52,11 +53,15 @@ class ListaInfetadosFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor>
         LoaderManager.getInstance(this)
             .initLoader(ID_LOADER_MANAGER_INFETADOS, null, this)
     }
+    fun navegaNovoInfetado(){
+        findNavController().navigate(R.id.action_listaInfetadosFragment_to_novoInfetadoFragment)
+    }
     fun processaOpcaoMenu(item: MenuItem): Boolean {
         when (item.itemId) {
-
+            R.id.action_novo_infetado -> navegaNovoInfetado()
             else -> return false
         }
+        return true
     }
 
     override fun onDestroyView() {
