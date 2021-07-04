@@ -15,7 +15,8 @@
             android:id="@+id/editTextDataInfecao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/data_de_infecao" />
+            android:hint="@string/data_de_infecao"
+            android:inputType="date" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"

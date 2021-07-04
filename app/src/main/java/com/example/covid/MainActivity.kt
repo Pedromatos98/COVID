@@ -64,11 +64,12 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             else -> when (menuAtual) {
-                R.menu.menu_lista_infetados ->(DadosApp.fragment as ListaInfetadosFragment).processaOpcaoMenu(item)
                 R.menu.menu_lista_pacientes -> (DadosApp.fragment as ListaPacientesFragment).processaOpcaoMenu(item)
                 R.menu.menu_novo_paciente -> (DadosApp.fragment as NovoPacienteFragment).processaOpcaoMenu(item)
                 R.menu.menu_edita_paciente ->(DadosApp.fragment as EditaPacienteFragment).processaOpcaoMenu(item)
                 R.menu.menu_elimina_paciente ->(DadosApp.fragment as EliminaPacienteFragment).processaOpcaoMenu(item)
+                R.menu.menu_lista_infetados ->(DadosApp.fragment as ListaInfetadosFragment).processaOpcaoMenu(item)
+                R.menu.menu_novo_infetado ->(DadosApp.fragment as NovoInfetadoFragment).processaOpcaoMenu(item)
 
 
                 else -> false

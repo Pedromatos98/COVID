@@ -17,6 +17,7 @@ import androidx.loader.content.Loader
 import androidx.navigation.fragment.findNavController
 import com.example.covid.databinding.FragmentNovoInfetadoBinding
 import com.google.android.material.snackbar.Snackbar
+import java.util.*
 
 /**
  * A simple [Fragment] subclass.
@@ -59,6 +60,52 @@ class NovoInfetadoFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    fun navegaListaInfetados(){
+        findNavController().navigate(R.id.action_novoInfetadoFragment_to_listaInfetadosFragment)
+    }
+    fun guardar() {
+        val dataInfecao = editTextDataInfecao.text.toString()
+        if (dataInfecao.isEmpty()) {
+            editTextDataInfecao.setError("Preencha a Data de Infeção")
+            editTextDataInfecao.requestFocus()
+            return
+        }
+
+        val sintomas = editTextSintomas.text.toString()
+        if (sintomas.isEmpty()) {
+            editTextSintomas.setError("Preencha os Sintomas")
+            editTextSintomas.requestFocus()
+            return
+        }
+
+        val idPaciente = spinnerNomePaciente.selectedItemId
+
+        val infetado = Infetado(dataInfecao = Date(dataInfecao) , sintomas = sintomas, idPaciente = idPaciente)
+
+        val uri = activity?.contentResolver?.insert(
+            ContentProviderCovid.ENDERECO_INFETADOS,
+            infetado.toContentValues()
+        )
+
+
+
+        Toast.makeText(
+            requireContext(),"Infetado inserido com sucesso",
+            Toast.LENGTH_LONG
+        ).show()
+        navegaListaInfetados()
+    }
+
+    fun processaOpcaoMenu(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_guardar_novo_infetado -> guardar()
+            R.id.action_cancelar_novo_infetado -> navegaListaInfetados()
+            else -> return false
+        }
+
+        return true
     }
 
     override fun onCreateLoader(id: Int, args: Bundle?): Loader<Cursor> {
