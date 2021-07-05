@@ -208,19 +208,20 @@ class TestesBaseDados {
             )
         paciente.id = inserePaciente(tabelaPacientes, paciente)
 
-
+        val tabelaInfetados = TabelaInfetados(db)
         val infetado = Infetado(
             dataInfecao = Date(2021-1900,6,10),
             sintomas = "falta de paladar ",
             idPaciente = paciente.id,
-            nomePaciente = "Albano Costa"
+            nomePaciente = paciente.nomePaciente
         )
-        infetado.id = inserePaciente(tabelaPacientes, paciente)
+        infetado.id = insereInfetado(tabelaInfetados, infetado)
 
-        assertEquals(paciente, getPacienteBaseDados(tabelaPacientes, paciente.id))
+        assertEquals(infetado, getInfetadoBaseDados(tabelaInfetados, infetado.id))
 
         db.close()
     }
+
 
     @Test
     fun consegueAlterarInfetados() {
