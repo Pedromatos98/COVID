@@ -1,20 +1,22 @@
 package com.example.covid
 
+import android.app.DatePickerDialog
+import android.app.Dialog
 import android.database.Cursor
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.SimpleCursorAdapter
-import android.widget.Spinner
-import android.widget.Toast
+import android.widget.*
+import androidx.annotation.RequiresApi
 import androidx.loader.app.LoaderManager
 import androidx.loader.content.CursorLoader
 import androidx.loader.content.Loader
 import androidx.navigation.fragment.findNavController
+import com.example.covid.ListaPacientesFragment.Companion.ID_LOADER_MANAGER_PACIENTES
 import com.example.covid.databinding.FragmentNovoInfetadoBinding
 import com.google.android.material.snackbar.Snackbar
 import java.util.*
@@ -24,12 +26,13 @@ import java.util.*
  * Use the [NovoInfetadoFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class NovoInfetadoFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
+class NovoInfetadoFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor>{
     private var _binding: FragmentNovoInfetadoBinding? = null
 
     private lateinit var editTextDataInfecao: EditText
     private lateinit var editTextSintomas: EditText
     private lateinit var spinnerNomePaciente: Spinner
+
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -45,6 +48,7 @@ class NovoInfetadoFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
         _binding = FragmentNovoInfetadoBinding.inflate(inflater, container, false)
         return binding.root
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -62,9 +66,11 @@ class NovoInfetadoFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
         _binding = null
     }
 
-    fun navegaListaInfetados(){
+
+    fun navegaListaInfetados() {
         findNavController().navigate(R.id.action_novoInfetadoFragment_to_listaInfetadosFragment)
     }
+
     fun guardar() {
         val dataInfecao = editTextDataInfecao.text.toString()
         if (dataInfecao.isEmpty()) {
@@ -82,7 +88,8 @@ class NovoInfetadoFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
 
         val idPaciente = spinnerNomePaciente.selectedItemId
 
-        val infetado = Infetado(dataInfecao = Date(dataInfecao) , sintomas = sintomas, idPaciente = idPaciente)
+        val infetado =
+            Infetado(dataInfecao = Date(dataInfecao), sintomas = sintomas, idPaciente = idPaciente)
 
         val uri = activity?.contentResolver?.insert(
             ContentProviderCovid.ENDERECO_INFETADOS,
@@ -92,12 +99,13 @@ class NovoInfetadoFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
 
 
         Toast.makeText(
-            requireContext(),"Infetado inserido com sucesso",
+            requireContext(), "Infetado inserido com sucesso",
             Toast.LENGTH_LONG
         ).show()
         navegaListaInfetados()
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     fun processaOpcaoMenu(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_guardar_novo_infetado -> guardar()
@@ -117,6 +125,7 @@ class NovoInfetadoFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
             TabelaPacientes.CAMPO_NOME_PACIENTE
         )
     }
+
     override fun onLoadFinished(loader: Loader<Cursor>, data: Cursor?) {
         atualizaSpinnerPacientes(data)
     }
@@ -135,12 +144,8 @@ class NovoInfetadoFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor> {
             0
         )
     }
+
     companion object {
         const val ID_LOADER_MANAGER_PACIENTES = 0
     }
-
-
-
-
-
 }

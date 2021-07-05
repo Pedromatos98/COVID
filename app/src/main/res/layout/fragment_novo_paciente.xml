@@ -39,7 +39,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margem_campos"
-                    android:hint="@string/data_nascimento"
+                    android:hint="Data Nascimento (mm/dd/yyyy)"
                     android:inputType="date" />
 
                 <com.google.android.material.textfield.TextInputLayout
