@@ -105,7 +105,6 @@ class NovoInfetadoFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor>{
         navegaListaInfetados()
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     fun processaOpcaoMenu(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_guardar_novo_infetado -> guardar()
