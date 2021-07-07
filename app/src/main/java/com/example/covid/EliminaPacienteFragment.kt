@@ -20,6 +20,7 @@ class EliminaPacienteFragment : Fragment() {
     private lateinit var textViewNomePaciente : TextView
     private lateinit var textViewNumeroUtente : TextView
     private lateinit var textViewDataNascimento : TextView
+    private lateinit var textViewMorada : TextView
     private lateinit var textViewContacto : TextView
 
     override fun onCreateView(
@@ -38,12 +39,14 @@ class EliminaPacienteFragment : Fragment() {
         textViewNomePaciente = view.findViewById(R.id.textViewNomePaciente)
         textViewNumeroUtente = view.findViewById(R.id.textViewNumeroUtente)
         textViewDataNascimento = view.findViewById(R.id.textViewIdade)
+        textViewMorada = view.findViewById(R.id.textViewMorada)
         textViewContacto = view.findViewById(R.id.textViewContacto)
 
         val paciente = DadosApp.pacienteSelecionado!!
         textViewNomePaciente.setText(paciente.nomePaciente)
         textViewNumeroUtente.setText(paciente.numeroUtente)
         textViewDataNascimento.setText(paciente.dataNascimento.toString())
+        textViewMorada.setText(paciente.morada)
         textViewContacto.setText(paciente.contacto)
 
     }

@@ -71,6 +71,19 @@
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <TextView
+        android:id="@+id/textViewMorada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margem_campos"
+        android:layout_marginLeft="@dimen/margem_campos"
+        android:layout_marginTop="@dimen/margem_campos"
+        android:text="Rua Direita"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/textView14"
+        app:layout_constraintTop_toBottomOf="@+id/textViewIdade" />
+
+    <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -93,7 +106,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/textView16"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMorada"
         tools:text="123456789" />
 
     <TextView
@@ -126,18 +139,5 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewNumeroUtente"
         app:layout_constraintVertical_bias="0.0"
         tools:text="96123321" />
-
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margem_campos"
-        android:layout_marginLeft="@dimen/margem_campos"
-        android:layout_marginTop="@dimen/margem_campos"
-        android:text="Rua Direita"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toEndOf="@+id/textView14"
-        app:layout_constraintTop_toBottomOf="@+id/textViewIdade" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
