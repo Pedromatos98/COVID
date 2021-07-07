@@ -1,6 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EliminaInfetadoFragment"/>
+    android:orientation="vertical"
+    tools:context=".EliminaInfetadoFragment" >
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margem_ecran"
+        android:layout_marginLeft="@dimen/margem_ecran"
+        android:layout_marginTop="@dimen/margem_ecran"
+        android:layout_marginEnd="@dimen/margem_ecran"
+        android:layout_marginRight="@dimen/margem_ecran"
+        android:text="Nome Paciente Infetado:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/cor_destaque" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margem_ecran"
+        android:layout_marginLeft="@dimen/margem_ecran"
+        android:layout_marginTop="@dimen/margem_campos"
+        android:layout_marginEnd="@dimen/margem_ecran"
+        android:layout_marginRight="@dimen/margem_ecran"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        tools:text="Alberto " />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margem_ecran"
+        android:layout_marginLeft="@dimen/margem_ecran"
+        android:layout_marginTop="@dimen/margem_campos"
+        android:text="Data de Infeção :"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/cor_destaque" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margem_ecran"
+        android:layout_marginLeft="@dimen/margem_ecran"
+        android:layout_marginTop="@dimen/margem_campos"
+        android:layout_marginEnd="@dimen/margem_ecran"
+        android:layout_marginRight="@dimen/margem_ecran"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        tools:text="07/07/2021" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margem_ecran"
+        android:layout_marginLeft="@dimen/margem_ecran"
+        android:layout_marginTop="@dimen/margem_campos"
+        android:layout_marginEnd="@dimen/margem_ecran"
+        android:layout_marginRight="@dimen/margem_ecran"
+        android:text="Sintomas :"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/cor_destaque" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margem_ecran"
+        android:layout_marginLeft="@dimen/margem_ecran"
+        android:layout_marginTop="@dimen/margem_campos"
+        android:layout_marginEnd="@dimen/margem_ecran"
+        android:layout_marginRight="@dimen/margem_ecran"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        tools:text="Falta de Paladar" />
+</LinearLayout>
