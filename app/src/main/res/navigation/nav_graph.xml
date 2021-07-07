@@ -113,8 +113,8 @@
     <fragment
         android:id="@+id/listaVacinadosFragment"
         android:name="com.example.covid.ListaVacinadosFragment"
-        android:label="fragment_lista_vacinados"
-        tools:layout="@layout/fragment_lista_vacinados" >
+        android:label="@string/lista_vacinados_fragment_label"
+        tools:layout="@layout/fragment_lista_vacinados">
         <action
             android:id="@+id/action_listaVacinadosFragment_to_menuPrincipalFragment"
             app:destination="@id/menuPrincipalFragment" />

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/textView18"
@@ -82,9 +82,11 @@
         android:layout_marginStart="@dimen/margem_ecran"
         android:layout_marginLeft="@dimen/margem_ecran"
         android:layout_marginTop="@dimen/margem_campos"
+        android:layout_marginBottom="24dp"
         android:inputType="number"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView22"
         app:layout_constraintTop_toBottomOf="@+id/textViewDataAdmnistracao"
         tools:text="2" />
