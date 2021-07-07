@@ -16,7 +16,7 @@
         android:layout_marginTop="@dimen/margem_ecran"
         android:layout_marginEnd="@dimen/margem_campos"
         android:layout_marginRight="@dimen/margem_campos"
-        android:text="Nome Paciente :"
+        android:text="Nome :"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/cor_destaque"
         android:textStyle="bold" />

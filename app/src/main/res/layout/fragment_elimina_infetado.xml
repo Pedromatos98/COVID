@@ -15,7 +15,7 @@
         android:layout_marginTop="@dimen/margem_ecran"
         android:layout_marginEnd="@dimen/margem_ecran"
         android:layout_marginRight="@dimen/margem_ecran"
-        android:text="Nome Paciente Infetado:"
+        android:text="Nome :"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/cor_destaque"
         android:textStyle="bold" />
