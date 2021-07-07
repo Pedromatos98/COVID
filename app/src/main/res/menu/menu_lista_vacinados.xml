@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.covid.MainActivity">
+    <item
+        android:id="@+id/action_novo_vacinado"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="@string/novo_vacinado"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_alterar_vacinado"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:title="@string/alterar_infetado"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_eliminar_vacinado"
+        android:title="@string/eliminar_vacinado"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_settings"
+        android:title="@string/settings"
+        app:showAsAction="never" />
+</menu>
