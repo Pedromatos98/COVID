@@ -51,6 +51,9 @@ class MainActivity : AppCompatActivity() {
         if (menuAtual == R.menu.menu_lista_infetados) {
             atualizaMenuListaInfetados(false)
         }
+        if (menuAtual == R.menu.menu_lista_infetados) {
+            atualizaMenuListaVacinados(false)
+        }
         return true
     }
 
@@ -72,6 +75,7 @@ class MainActivity : AppCompatActivity() {
                 R.menu.menu_novo_infetado ->(DadosApp.fragment as NovoInfetadoFragment).processaOpcaoMenu(item)
                 R.menu.menu_edita_infetado ->(DadosApp.fragment as EditaInfetadoFragment).processaOpcaoMenu(item)
                 R.menu.menu_elimina_infetado ->(DadosApp.fragment as EliminaInfetadoFragment).processaOpcaoMenu(item)
+                R.menu.menu_lista_vacinados ->(DadosApp.fragment as ListaVacinadosFragment).processaOpcaoMenu(item)
                 else -> false
             }
         }

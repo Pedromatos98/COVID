@@ -9,5 +9,6 @@ class DadosApp {
             lateinit var fragment: Fragment
             var pacienteSelecionado : Paciente? = null
             var infetadoSelecionado : Infetado? = null
+            var vacinadoSelecionado : Vacinado? = null
         }
 }
