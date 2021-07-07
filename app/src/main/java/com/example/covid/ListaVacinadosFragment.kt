@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.loader.app.LoaderManager
 import androidx.loader.content.CursorLoader
 import androidx.loader.content.Loader
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.covid.databinding.FragmentListaVacinadosBinding
@@ -49,8 +50,12 @@ class ListaVacinadosFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor>
         LoaderManager.getInstance(this)
             .initLoader(ID_LOADER_MANAGER_VACINADOS, null, this)
     }
+    fun navegaNovoVacinado() {
+        findNavController().navigate(R.id.action_listaVacinadosFragment_to_novoVacinadoFragment)
+    }
     fun processaOpcaoMenu(item: MenuItem): Boolean {
         when (item.itemId) {
+            R.id.action_novo_vacinado-> navegaNovoVacinado()
             else -> return false
         }
 
