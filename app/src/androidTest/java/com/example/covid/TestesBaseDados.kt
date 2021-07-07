@@ -73,7 +73,7 @@ class TestesBaseDados {
     private fun getVacinadoBaseDados(tabela: TabelaVacinados, id: Long): Vacinado {
         val cursor = tabela.query(
             TabelaVacinados.TODAS_COLUNAS,
-            "${BaseColumns._ID}=?",
+            "${TabelaVacinados.NOME_TABELA}.${BaseColumns._ID}",
             arrayOf(id.toString()),
             null, null, null
         )
@@ -322,5 +322,34 @@ class TestesBaseDados {
 
         db.close()
     }
+    @Test
+    fun consegueInserirVacinado() {
+        val db = getBdCovidOpenHelper().writableDatabase
+
+        val tabelaPacientes = TabelaPacientes(db)
+        val paciente =
+            Paciente(
+                nomePaciente = "Bernardo",
+                numeroUtente = "456789231",
+                dataNascimento = Date(1995 - 1900, 5, 10),
+                morada = "Avenida dos Bombeiros",
+                contacto = "919874563"
+            )
+        paciente.id = inserePaciente(tabelaPacientes, paciente)
+
+        val tabelaVacinados = TabelaVacinados(db)
+        val vacinado = Vacinado(
+            dataAdmnistracao = Date(2021-1900,7,1),
+            numeroAdmnistracoes = "2",
+            idPaciente = paciente.id,
+            nomePaciente = paciente.nomePaciente
+        )
+        vacinado.id = insereVacinado(tabelaVacinados, vacinado)
+
+        assertEquals(vacinado, getVacinadoBaseDados(tabelaVacinados, vacinado.id))
+
+        db.close()
+    }
+
 }
 
