@@ -22,6 +22,7 @@ class EditaPacienteFragment : Fragment() {
     private lateinit var  editTextNomePaciente : EditText
     private lateinit var editTextNumeroUtente :EditText
     private lateinit var editTextDataNascimento :EditText
+    private lateinit var editTextMorada : EditText
     private lateinit var editTextContacto :EditText
 
 
@@ -40,11 +41,13 @@ class EditaPacienteFragment : Fragment() {
         editTextNomePaciente = view.findViewById(R.id.editTextNomePaciente)
         editTextNumeroUtente = view.findViewById(R.id.editTextNumeroUtente)
         editTextDataNascimento = view.findViewById(R.id.editTextDataNascimento)
+        editTextMorada = view.findViewById(R.id.editTextMorada)
         editTextContacto = view.findViewById(R.id.editTextContacto)
 
         editTextNomePaciente.setText(DadosApp.pacienteSelecionado!!.nomePaciente)
         editTextNumeroUtente.setText(DadosApp.pacienteSelecionado!!.numeroUtente)
         editTextDataNascimento.setText(DadosApp.pacienteSelecionado!!.dataNascimento.toString())
+        editTextMorada.setText(DadosApp.pacienteSelecionado!!.morada)
         editTextContacto.setText(DadosApp.pacienteSelecionado!!.contacto)
     }
     fun navegaListaPacientes(){
@@ -69,6 +72,11 @@ class EditaPacienteFragment : Fragment() {
             editTextDataNascimento.requestFocus()
             return
         }
+        val morada = editTextMorada.text.toString()
+        if (morada.isEmpty()) {
+            editTextMorada.requestFocus()
+            return
+        }
         val contacto = editTextContacto.text.toString()
         if (contacto.isEmpty()) {
             editTextContacto.setError("")
@@ -82,6 +90,7 @@ class EditaPacienteFragment : Fragment() {
         paciente.nomePaciente = nomePaciente
         paciente.numeroUtente = numeroUtente
         paciente.dataNascimento = Date(dataNascimento)
+        paciente.morada = morada
         paciente.contacto = contacto
 
         val uriPacientes = Uri.withAppendedPath(
