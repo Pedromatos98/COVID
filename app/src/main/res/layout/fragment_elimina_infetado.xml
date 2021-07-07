@@ -17,7 +17,8 @@
         android:layout_marginRight="@dimen/margem_ecran"
         android:text="Nome Paciente Infetado:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/cor_destaque" />
+        android:textColor="@color/cor_destaque"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textViewNomePacienteInfetado"
@@ -29,6 +30,7 @@
         android:layout_marginEnd="@dimen/margem_ecran"
         android:layout_marginRight="@dimen/margem_ecran"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black"
         tools:text="Alberto " />
 
     <TextView
@@ -40,7 +42,8 @@
         android:layout_marginTop="@dimen/margem_campos"
         android:text="Data de Infeção :"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/cor_destaque" />
+        android:textColor="@color/cor_destaque"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textViewDataInfecao"
@@ -52,6 +55,7 @@
         android:layout_marginEnd="@dimen/margem_ecran"
         android:layout_marginRight="@dimen/margem_ecran"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black"
         tools:text="07/07/2021" />
 
     <TextView
@@ -65,7 +69,8 @@
         android:layout_marginRight="@dimen/margem_ecran"
         android:text="Sintomas :"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/cor_destaque" />
+        android:textColor="@color/cor_destaque"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textViewSintomas"
@@ -77,5 +82,7 @@
         android:layout_marginEnd="@dimen/margem_ecran"
         android:layout_marginRight="@dimen/margem_ecran"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black"
         tools:text="Falta de Paladar" />
+
 </LinearLayout>

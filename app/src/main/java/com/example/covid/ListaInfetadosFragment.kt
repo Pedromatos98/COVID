@@ -66,7 +66,7 @@ class ListaInfetadosFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor>
         when (item.itemId) {
             R.id.action_novo_infetado -> navegaNovoInfetado()
             R.id.action_alterar_infetado -> navegaAlterarInfetado()
-            R.id.action_confirma_eliminar_infetado -> navegaEliminarInfetado()
+            R.id.action_eliminar_infetado -> navegaEliminarInfetado()
 
             else -> return false
         }

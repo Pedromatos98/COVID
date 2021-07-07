@@ -18,7 +18,8 @@
         android:layout_marginRight="@dimen/margem_campos"
         android:text="Nome Paciente :"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/cor_destaque" />
+        android:textColor="@color/cor_destaque"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textViewNomePaciente"
@@ -43,7 +44,8 @@
         android:layout_marginRight="@dimen/margem_ecran"
         android:text="Número Utente"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/cor_destaque" />
+        android:textColor="@color/cor_destaque"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textViewNumeroUtente"
@@ -68,7 +70,8 @@
         android:layout_marginRight="@dimen/margem_ecran"
         android:text="Data Nascimento :"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/cor_destaque" />
+        android:textColor="@color/cor_destaque"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textViewIdade"
@@ -92,7 +95,8 @@
         android:layout_marginEnd="@dimen/margem_ecran"
         android:text="Morada :"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/cor_destaque" />
+        android:textColor="@color/cor_destaque"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textViewMorada"
@@ -117,7 +121,8 @@
         android:layout_marginRight="@dimen/margem_ecran"
         android:text="Contacto :"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/cor_destaque" />
+        android:textColor="@color/cor_destaque"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textViewContacto"

@@ -73,7 +73,7 @@ class EliminaInfetadoFragment : Fragment() {
 
         Toast.makeText(
             requireContext(),
-            "Infetado inserido com sucesso",
+            "Infetado eliminado com sucesso",
             Toast.LENGTH_LONG
         ).show()
         navegaListaInfetados()

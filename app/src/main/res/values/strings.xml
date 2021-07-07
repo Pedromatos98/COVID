@@ -14,12 +14,12 @@
     <string name="novo_paciente_fragment_label">Novo Paciente</string>
     <string name="lista_pacientes_fragment_label">Pacientes</string>
     <string name="editar_paciente_fragment_label">Editar Paciente</string>
-    <string name="eliminar_paciente_fragment_label">Eliminar Paciente</string>
+    <string name="eliminar_paciente_fragment_label">Eliminar Paciente ?</string>
     <string name="lista_infetados_fragment_label">Infetados</string>
     <string name="novo_infetado_fragment_label">Novo Infetado</string>
     <string name="novo_infetado">Novo infetado</string>
     <string name="alterar_infetado">Alterar Infetado</string>
-    <string name="eliminar_infetado">Eliminar Infetado?</string>
+    <string name="eliminar_infetado">Eliminar Infetado</string>
     <string name="data_de_infecao">Data de Infeção</string>
     <string name="sintomas">Sintomas</string>
     <string name="edita_infetado_fragment_label">Editar Infetado</string>

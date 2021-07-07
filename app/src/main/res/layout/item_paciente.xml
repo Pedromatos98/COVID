@@ -15,6 +15,7 @@
         android:text="Nome :"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/cor_destaque"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,6 +42,7 @@
         android:text="Idade :"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/cor_destaque"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -67,6 +69,7 @@
         android:text="Morada:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/cor_destaque"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -90,9 +93,10 @@
         android:layout_marginStart="@dimen/margem_ecran"
         android:layout_marginLeft="@dimen/margem_ecran"
         android:layout_marginTop="@dimen/margem_campos"
-        android:text="Numero Utente :"
+        android:text="Número Utente :"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/cor_destaque"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
@@ -119,6 +123,7 @@
         android:text="Contacto:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/cor_destaque"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
