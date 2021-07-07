@@ -53,9 +53,14 @@ class ListaVacinadosFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor>
     fun navegaNovoVacinado() {
         findNavController().navigate(R.id.action_listaVacinadosFragment_to_novoVacinadoFragment)
     }
+    fun EliminaVacinado() {
+        findNavController().navigate(R.id.action_listaVacinadosFragment_to_eliminaVacinadoFragment)
+    }
     fun processaOpcaoMenu(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_novo_vacinado-> navegaNovoVacinado()
+            R.id.action_eliminar_vacinado-> EliminaVacinado()
+
             else -> return false
         }
 
