@@ -16,7 +16,7 @@
         android:layout_marginTop="@dimen/margem_ecran"
         android:layout_marginEnd="@dimen/margem_campos"
         android:layout_marginRight="@dimen/margem_campos"
-        android:text="@string/nome_paciente"
+        android:text="Nome Paciente :"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/cor_destaque" />
 
@@ -41,7 +41,7 @@
         android:layout_marginTop="@dimen/margem_campos"
         android:layout_marginEnd="@dimen/margem_ecran"
         android:layout_marginRight="@dimen/margem_ecran"
-        android:text="@string/numero_utente"
+        android:text="Número Utente"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/cor_destaque" />
 
@@ -66,7 +66,7 @@
         android:layout_marginTop="@dimen/margem_campos"
         android:layout_marginEnd="@dimen/margem_ecran"
         android:layout_marginRight="@dimen/margem_ecran"
-        android:text="@string/data_nascimento"
+        android:text="Data Nascimento :"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/cor_destaque" />
 
@@ -91,7 +91,7 @@
         android:layout_marginTop="@dimen/margem_campos"
         android:layout_marginEnd="@dimen/margem_ecran"
         android:layout_marginRight="@dimen/margem_ecran"
-        android:text="@string/contacto"
+        android:text="Contacto :"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/cor_destaque" />
 

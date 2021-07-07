@@ -14,6 +14,7 @@
         android:layout_marginTop="8dp"
         android:text="Nome :"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/cor_destaque"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,6 +26,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/textView13"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Paulo Santos" />
@@ -38,6 +40,7 @@
         android:layout_marginTop="8dp"
         android:text="Data de Infeção :"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/cor_destaque"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
@@ -49,6 +52,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/textViewNomePaciente"
         tools:text="03/07/2021" />
@@ -62,6 +66,7 @@
         android:layout_marginTop="8dp"
         android:text="Sintomas :"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/cor_destaque"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -74,6 +79,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="@dimen/espacamento_ficha"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView11"
         app:layout_constraintTop_toBottomOf="@+id/textViewDataInfecao"

@@ -214,11 +214,11 @@ class EditaInfetadoFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor>{
     }
 
     private fun atualizaPacienteSelecionado() {
-        val idCategoria = DadosApp.infetadoSelecionado!!.idPaciente
+        val idNomePaciente = DadosApp.infetadoSelecionado!!.idPaciente
 
-        val ultimaPaciente = spinnerPacientes.count - 1
-        for (i in 0..ultimaPaciente) {
-            if (idCategoria == spinnerPacientes.getItemIdAtPosition(i)) {
+        val ultimoPaciente = spinnerPacientes.count - 1
+        for (i in 0..ultimoPaciente) {
+            if (idNomePaciente == spinnerPacientes.getItemIdAtPosition(i)) {
                 spinnerPacientes.setSelection(i)
                 return
             }
