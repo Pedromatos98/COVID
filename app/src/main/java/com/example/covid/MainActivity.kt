@@ -92,4 +92,8 @@ class MainActivity : AppCompatActivity() {
         menu.findItem(R.id.action_alterar_infetado).setVisible(mostraBotoesAlterarEliminar)
         menu.findItem(R.id.action_eliminar_infetado).setVisible(mostraBotoesAlterarEliminar)
     }
+    fun atualizaMenuListaVacinados(mostraBotoesAlterarEliminar : Boolean) {
+        menu.findItem(R.id.action_alterar_vacinado).setVisible(mostraBotoesAlterarEliminar)
+        menu.findItem(R.id.action_eliminar_vacinado).setVisible(mostraBotoesAlterarEliminar)
+    }
 }
