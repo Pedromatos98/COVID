@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.COVID" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#1E88E5</item>
-        <item name="colorPrimaryVariant">#03A9F4</item>
+        <item name="colorPrimary">#3949AB</item>
+        <item name="colorPrimaryVariant">#4A569C</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
