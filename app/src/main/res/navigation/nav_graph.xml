@@ -88,7 +88,7 @@
     </fragment>
     <fragment
         android:id="@+id/editaInfetadoFragment"
-        android:name="com.example.covid.editaInfetadoFragment"
+        android:name="com.example.covid.EditaInfetadoFragment"
         android:label="@string/edita_infetado_fragment_label"
         tools:layout="@layout/fragment_edita_infetado">
         <action

@@ -70,6 +70,7 @@ class MainActivity : AppCompatActivity() {
                 R.menu.menu_elimina_paciente ->(DadosApp.fragment as EliminaPacienteFragment).processaOpcaoMenu(item)
                 R.menu.menu_lista_infetados ->(DadosApp.fragment as ListaInfetadosFragment).processaOpcaoMenu(item)
                 R.menu.menu_novo_infetado ->(DadosApp.fragment as NovoInfetadoFragment).processaOpcaoMenu(item)
+                R.menu.menu_edita_infetado ->(DadosApp.fragment as EditaInfetadoFragment).processaOpcaoMenu(item)
                 else -> false
             }
         }

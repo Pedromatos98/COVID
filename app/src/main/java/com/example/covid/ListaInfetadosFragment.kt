@@ -56,9 +56,14 @@ class ListaInfetadosFragment : Fragment(), LoaderManager.LoaderCallbacks<Cursor>
     fun navegaNovoInfetado(){
         findNavController().navigate(R.id.action_listaInfetadosFragment_to_novoInfetadoFragment)
     }
+    fun navegaAlterarInfetado(){
+        findNavController().navigate(R.id.action_listaInfetadosFragment_to_editaInfetadoFragment)
+    }
     fun processaOpcaoMenu(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_novo_infetado -> navegaNovoInfetado()
+            R.id.action_alterar_infetado -> navegaAlterarInfetado()
+
             else -> return false
         }
         return true
