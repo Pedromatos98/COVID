@@ -34,15 +34,15 @@ class TabelaInfetados (db: SQLiteDatabase) {
     ): Cursor? {
         val ultimaColuna = columns.size - 1
 
-        var posColNomeCategoria = -1 // -1 indica que a coluna não foi pedida
+        var posColNomePaciente = -1 // -1 indica que a coluna não foi pedida
         for (i in 0..ultimaColuna) {
             if (columns[i] == CAMPO_EXTERNO_NOME_PACIENTE) {
-                posColNomeCategoria = i
+                posColNomePaciente = i
                 break
             }
         }
 
-        if (posColNomeCategoria == -1) {
+        if (posColNomePaciente == -1) {
             return db.query(NOME_TABELA, columns, selection, selectionArgs, groupBy, having, orderBy)
         }
 
@@ -50,14 +50,14 @@ class TabelaInfetados (db: SQLiteDatabase) {
         for (i in 0..ultimaColuna) {
             if (i > 0) colunas += ","
 
-            colunas += if (i == posColNomeCategoria) {
-                "${TabelaPacientes.NOME_TABELA}.${TabelaPacientes.CAMPO_NOME_PACIENTE} AS $CAMPO_EXTERNO_NOME_PACIENTE"
+            colunas += if (i == posColNomePaciente) {
+                "${TabelaPacientes.NOME_TABELA}.${TabelaPacientes.CAMPO_NOME_PACIENTE} AS ${CAMPO_EXTERNO_NOME_PACIENTE}"
             } else {
                 "${NOME_TABELA}.${columns[i]}"
             }
         }
 
-        val tabelas = "$NOME_TABELA INNER JOIN ${TabelaPacientes.NOME_TABELA} ON ${TabelaPacientes.NOME_TABELA}.${BaseColumns._ID}=$CAMPO_ID_PACIENTE"
+        val tabelas = "${NOME_TABELA} INNER JOIN ${TabelaPacientes.NOME_TABELA} ON ${TabelaPacientes.NOME_TABELA}.${BaseColumns._ID}=${CAMPO_ID_PACIENTE}"
 
         var sql = "SELECT $colunas FROM $tabelas"
 

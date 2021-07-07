@@ -119,4 +119,9 @@
             android:id="@+id/action_listaVacinadosFragment_to_menuPrincipalFragment"
             app:destination="@id/menuPrincipalFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/novoVacinadoFragment"
+        android:name="com.example.covid.NovoVacinadoFragment"
+        android:label="fragment_novo_vacinado"
+        tools:layout="@layout/fragment_novo_vacinado" />
 </navigation>

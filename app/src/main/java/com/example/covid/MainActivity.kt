@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         if (menuAtual == R.menu.menu_lista_infetados) {
             atualizaMenuListaInfetados(false)
         }
-        if (menuAtual == R.menu.menu_lista_infetados) {
+        if (menuAtual == R.menu.menu_lista_vacinados) {
             atualizaMenuListaVacinados(false)
         }
         return true

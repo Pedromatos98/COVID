@@ -28,7 +28,7 @@ class AdapterVacinados (val fragment: ListaVacinadosFragment) : RecyclerView.Ada
         fun atualizaVacinado(vacinado: Vacinado) {
             this.vacinado = vacinado
             textViewNomeVacinado.text = vacinado.nomePaciente
-            textViewDataAdmnistracao.text = vacinado.dataAdmnistracao
+            textViewDataAdmnistracao.text = vacinado.dataAdmnistracao.toString()
             textViewNumAdmn.text = vacinado.numeroAdmnistracoes.toString()
         }
 
