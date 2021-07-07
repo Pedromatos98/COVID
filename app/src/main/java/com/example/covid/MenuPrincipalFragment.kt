@@ -41,6 +41,10 @@ class MenuPrincipalFragment : Fragment() {
         botaoInfetados.setOnClickListener {
             findNavController().navigate(R.id.action_menuPrincipalFragment_to_listaInfetadosFragment)
         }
+        val botaoVacinados = binding.buttonVacinados
+        botaoVacinados.setOnClickListener {
+            findNavController().navigate(R.id.action_menuPrincipalFragment_to_listaVacinadosFragment)
+        }
         return binding.root
     }
     override fun onDestroyView() {
