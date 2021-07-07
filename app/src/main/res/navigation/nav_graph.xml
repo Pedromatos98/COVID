@@ -6,49 +6,49 @@
     android:label="@string/app_name"
     app:startDestination="@id/menuPrincipalFragment">
     <fragment
-        android:id="@+id/ListaPacientesFragment"
+        android:id="@+id/listaPacientesFragment"
         android:name="com.example.covid.ListaPacientesFragment"
         android:label="Pacientes"
         tools:layout="@layout/fragment_lista_pacientes">
         <action
             android:id="@+id/action_ListaPacientesFragment_to_NovoPacienteFragment"
-            app:destination="@id/NovoPacienteFragment" />
+            app:destination="@id/novoPacienteFragment" />
         <action
             android:id="@+id/action_ListaPacientesFragment_to_EditaPacienteFragment"
-            app:destination="@id/EditaPacienteFragment" />
+            app:destination="@id/editaPacienteFragment" />
         <action
             android:id="@+id/action_ListaPacientesFragment_to_eliminaPacienteFragment"
-            app:destination="@id/EliminaPacienteFragment" />
+            app:destination="@id/eliminaPacienteFragment" />
         <action
             android:id="@+id/action_ListaPacientesFragment_to_menuPrincipalFragment"
             app:destination="@id/menuPrincipalFragment" />
     </fragment>
     <fragment
-        android:id="@+id/NovoPacienteFragment"
+        android:id="@+id/novoPacienteFragment"
         android:name="com.example.covid.NovoPacienteFragment"
         android:label="@string/novo_paciente_fragment_label"
         tools:layout="@layout/fragment_novo_paciente">
         <action
             android:id="@+id/action_novoPacienteFragment_to_listaPacientesFragment"
-            app:destination="@id/ListaPacientesFragment" />
+            app:destination="@id/listaPacientesFragment" />
     </fragment>
     <fragment
-        android:id="@+id/EditaPacienteFragment"
+        android:id="@+id/editaPacienteFragment"
         android:name="com.example.covid.EditaPacienteFragment"
         android:label="@string/editar_paciente_fragment_label"
         tools:layout="@layout/fragment_edita_paciente">
         <action
             android:id="@+id/action_EditaPacienteFragment_to_ListaPacientesFragment"
-            app:destination="@id/ListaPacientesFragment" />
+            app:destination="@id/listaPacientesFragment" />
     </fragment>
     <fragment
-        android:id="@+id/EliminaPacienteFragment"
+        android:id="@+id/eliminaPacienteFragment"
         android:name="com.example.covid.EliminaPacienteFragment"
         android:label="@string/eliminar_paciente_fragment_label"
         tools:layout="@layout/fragment_elimina_paciente">
         <action
             android:id="@+id/action_eliminaPacienteFragment_to_ListaPacientesFragment"
-            app:destination="@id/ListaPacientesFragment" />
+            app:destination="@id/listaPacientesFragment" />
     </fragment>
     <fragment
         android:id="@+id/menuPrincipalFragment"
@@ -57,7 +57,7 @@
         tools:layout="@layout/fragment_menu_principal">
         <action
             android:id="@+id/action_menuPrincipalFragment_to_ListaPacientesFragment"
-            app:destination="@id/ListaPacientesFragment" />
+            app:destination="@id/listaPacientesFragment" />
         <action
             android:id="@+id/action_menuPrincipalFragment_to_listaInfetadosFragment"
             app:destination="@id/listaInfetadosFragment" />
@@ -76,6 +76,9 @@
         <action
             android:id="@+id/action_listaInfetadosFragment_to_editaInfetadoFragment"
             app:destination="@id/editaInfetadoFragment" />
+        <action
+            android:id="@+id/action_listaInfetadosFragment_to_eliminaInfetadoFragment"
+            app:destination="@id/eliminaInfetadoFragment" />
     </fragment>
     <fragment
         android:id="@+id/novoInfetadoFragment"
@@ -93,6 +96,15 @@
         tools:layout="@layout/fragment_edita_infetado">
         <action
             android:id="@+id/action_editaInfetadoFragment_to_listaInfetadosFragment"
+            app:destination="@id/listaInfetadosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eliminaInfetadoFragment"
+        android:name="com.example.covid.EliminaInfetadoFragment"
+        android:label="@string/elimina_infetado_fragment_label"
+        tools:layout="@layout/fragment_elimina_infetado">
+        <action
+            android:id="@+id/action_eliminaInfetadoFragment_to_listaInfetadosFragment"
             app:destination="@id/listaInfetadosFragment" />
     </fragment>
 </navigation>

@@ -19,8 +19,9 @@
     <string name="novo_infetado_fragment_label">Novo Infetado</string>
     <string name="novo_infetado">Novo infetado</string>
     <string name="alterar_infetado">Alterar Infetado</string>
-    <string name="eliminar_infetado">Eliminar infetado</string>
+    <string name="eliminar_infetado">Eliminar Infetado?</string>
     <string name="data_de_infecao">Data de Infeção</string>
     <string name="sintomas">Sintomas</string>
     <string name="edita_infetado_fragment_label">Editar Infetado</string>
+    <string name="elimina_infetado_fragment_label">Eliminar Infetado?</string>
 </resources>
