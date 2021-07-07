@@ -64,6 +64,9 @@
         <action
             android:id="@+id/action_menuPrincipalFragment_to_listaVacinadosFragment"
             app:destination="@id/listaVacinadosFragment" />
+        <action
+            android:id="@+id/action_menuPrincipalFragment_to_novoVacinadoFragment"
+            app:destination="@id/novoVacinadoFragment" />
     </fragment>
     <fragment
         android:id="@+id/listaInfetadosFragment"
@@ -123,5 +126,9 @@
         android:id="@+id/novoVacinadoFragment"
         android:name="com.example.covid.NovoVacinadoFragment"
         android:label="fragment_novo_vacinado"
-        tools:layout="@layout/fragment_novo_vacinado" />
+        tools:layout="@layout/fragment_novo_vacinado" >
+        <action
+            android:id="@+id/action_novoVacinadoFragment_to_menuPrincipalFragment"
+            app:destination="@id/menuPrincipalFragment" />
+    </fragment>
 </navigation>
