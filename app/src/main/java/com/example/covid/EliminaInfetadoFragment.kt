@@ -1,15 +1,15 @@
 package com.example.covid
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+import android.widget.TextView
+import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 
 /**
  * A simple [Fragment] subclass.
@@ -17,43 +17,75 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class EliminaInfetadoFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var textViewNomePacienteInfetado: TextView
+    private lateinit var textViewDataInfecao: TextView
+    private lateinit var textViewSintomas: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        DadosApp.fragment = this
+        (activity as MainActivity).menuAtual = R.menu.menu_elimina_infetado
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_elimina_infetado, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment EliminaInfetadoFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            EliminaInfetadoFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        textViewNomePacienteInfetado = view.findViewById(R.id.textViewNomePacienteInfetado)
+        textViewDataInfecao = view.findViewById(R.id.textViewDataInfecao)
+        textViewSintomas = view.findViewById(R.id.textViewSintomas)
+
+        val infetado = DadosApp.infetadoSelecionado!!
+        textViewNomePacienteInfetado.setText(infetado.nomePaciente)
+        textViewDataInfecao.setText(infetado.dataInfecao.toString())
+        textViewSintomas.setText(infetado.sintomas)
+
+    }
+
+    fun navegaListaInfetados() {
+        findNavController().navigate(R.id.action_eliminaInfetadoFragment_to_listaInfetadosFragment)
+    }
+
+    fun elimina() {
+        val uriLivro = Uri.withAppendedPath(
+            ContentProviderCovid.ENDERECO_INFETADOS,
+            DadosApp.infetadoSelecionado!!.id.toString()
+        )
+
+        val registos = activity?.contentResolver?.delete(
+            uriLivro,
+            null,
+            null
+        )
+
+        if (registos != 1) {
+            Toast.makeText(
+                requireContext(),
+                "Erro ao eliminar infetado",
+                Toast.LENGTH_LONG
+            ).show()
+            return
+        }
+
+        Toast.makeText(
+            requireContext(),
+            "Infetado inserido com sucesso",
+            Toast.LENGTH_LONG
+        ).show()
+        navegaListaInfetados()
+    }
+
+    fun processaOpcaoMenu(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_confirma_eliminar_infetado -> elimina()
+            R.id.action_cancelar_eliminar_infetado -> navegaListaInfetados()
+            else -> return false
+        }
+
+        return true
     }
 }
