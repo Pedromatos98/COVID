@@ -5,12 +5,13 @@ import android.database.Cursor
 import android.provider.BaseColumns
 import java.util.*
 
-data class Paciente(var id: Long = -1, var nomePaciente: String, var numeroUtente: String, var dataNascimento: Date, var contacto: String)  {
+data class Paciente(var id: Long = -1, var nomePaciente: String, var numeroUtente: String, var dataNascimento: Date,var morada: String,var contacto: String)  {
     fun toContentValues(): ContentValues {
         val valores = ContentValues().apply {
             put(TabelaPacientes.CAMPO_NOME_PACIENTE, nomePaciente)
             put(TabelaPacientes.CAMPO_NUMERO_UTENTE, numeroUtente)
             put(TabelaPacientes.CAMPO_DATA_NASCIMENTO, dataNascimento.toString())
+            put(TabelaPacientes.CAMPO_MORADA,morada)
             put(TabelaPacientes.CAMPO_CONTACTO, contacto)
 
         }
@@ -24,6 +25,7 @@ data class Paciente(var id: Long = -1, var nomePaciente: String, var numeroUtent
             val colNomePaciente = cursor.getColumnIndex(TabelaPacientes.CAMPO_NOME_PACIENTE)
             val colNumeroUtente = cursor.getColumnIndex(TabelaPacientes.CAMPO_NUMERO_UTENTE)
             val colDataNascimento = cursor.getColumnIndex(TabelaPacientes.CAMPO_DATA_NASCIMENTO)
+            val colMorada = cursor.getColumnIndex(TabelaPacientes.CAMPO_MORADA)
             val colContacto = cursor.getColumnIndex(TabelaPacientes.CAMPO_CONTACTO)
 
 
@@ -31,10 +33,11 @@ data class Paciente(var id: Long = -1, var nomePaciente: String, var numeroUtent
             val nomePaciente = cursor.getString(colNomePaciente)
             val numeroUtente = cursor.getString(colNumeroUtente)
             val dataNascimento = cursor.getString(colDataNascimento)
+            val morada = cursor.getString(colMorada)
             val contacto = cursor.getString(colContacto)
 
 
-            return Paciente(id, nomePaciente, numeroUtente, Date(dataNascimento), contacto)
+            return Paciente(id, nomePaciente, numeroUtente, Date(dataNascimento),morada, contacto)
         }
     }
 }
