@@ -73,6 +73,9 @@
         <action
             android:id="@+id/action_listaInfetadosFragment_to_novoInfetadoFragment"
             app:destination="@id/novoInfetadoFragment" />
+        <action
+            android:id="@+id/action_listaInfetadosFragment_to_editaInfetadoFragment"
+            app:destination="@id/editaInfetadoFragment" />
     </fragment>
     <fragment
         android:id="@+id/novoInfetadoFragment"
@@ -81,6 +84,15 @@
         tools:layout="@layout/fragment_novo_infetado">
         <action
             android:id="@+id/action_novoInfetadoFragment_to_listaInfetadosFragment"
+            app:destination="@id/listaInfetadosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editaInfetadoFragment"
+        android:name="com.example.covid.editaInfetadoFragment"
+        android:label="@string/edita_infetado_fragment_label"
+        tools:layout="@layout/fragment_edita_infetado">
+        <action
+            android:id="@+id/action_editaInfetadoFragment_to_listaInfetadosFragment"
             app:destination="@id/listaInfetadosFragment" />
     </fragment>
 </navigation>
