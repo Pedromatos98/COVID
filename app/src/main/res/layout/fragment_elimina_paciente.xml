@@ -83,6 +83,30 @@
         tools:text="01-01-1995" />
 
     <TextView
+        android:id="@+id/textView16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margem_ecran"
+        android:layout_marginLeft="@dimen/margem_ecran"
+        android:layout_marginTop="@dimen/margem_campos"
+        android:layout_marginEnd="@dimen/margem_ecran"
+        android:text="Morada :"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/cor_destaque" />
+
+    <TextView
+        android:id="@+id/textViewMorada"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margem_ecran"
+        android:layout_marginLeft="@dimen/margem_ecran"
+        android:layout_marginTop="@dimen/margem_campos"
+        android:layout_marginEnd="@dimen/margem_ecran"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#000000"
+        tools:text="Rua da Republica" />
+
+    <TextView
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -106,4 +130,5 @@
         android:layout_marginRight="@dimen/margem_ecran"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         tools:text="919876543" />
+
 </LinearLayout>
