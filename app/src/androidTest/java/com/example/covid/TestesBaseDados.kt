@@ -107,6 +107,7 @@ class TestesBaseDados {
             nomePaciente = "António Ramos",
             numeroUtente = "123456789",
             dataNascimento = Date(1990 - 1900, 1, 7),
+            morada = "Rua do Cabo",
             contacto = "961234567"
         )
         paciente.id = inserePaciente(tabelaPacientes, paciente)
@@ -127,6 +128,7 @@ class TestesBaseDados {
                 nomePaciente = "?",
                 numeroUtente = "?",
                 dataNascimento = Date(),
+                morada = "?",
                 contacto = "?"
             )
         paciente.id = inserePaciente(tabelaPacientes, paciente)
@@ -134,6 +136,7 @@ class TestesBaseDados {
         paciente.nomePaciente = "José Costa"
         paciente.numeroUtente = "987654321"
         paciente.dataNascimento = Date(2000 - 1900, 10, 10)
+        paciente.morada = "Avenida "
         paciente.contacto = "969876543"
 
         val registosAlterados = tabelaPacientes.update(
@@ -160,6 +163,7 @@ class TestesBaseDados {
                 nomePaciente = "?",
                 numeroUtente = "?",
                 dataNascimento = Date(),
+                morada = "",
                 contacto = "?"
             )
         paciente.id = inserePaciente(tabelaPacientes, paciente)
@@ -183,6 +187,7 @@ class TestesBaseDados {
             nomePaciente = "Mário Batista",
             numeroUtente = "123454321",
             dataNascimento = Date(1980 - 1900, 12, 20),
+            morada = "Rua Estreita",
             contacto = "961234987"
         )
 
@@ -204,6 +209,7 @@ class TestesBaseDados {
                 nomePaciente = "Artur Silva",
                 numeroUtente = "198273654",
                 dataNascimento = Date(1992 - 1900, 9, 12),
+                morada = "Rua do Estádio",
                 contacto = "969182736"
             )
         paciente.id = inserePaciente(tabelaPacientes, paciente)
@@ -228,9 +234,9 @@ class TestesBaseDados {
         val db = getBdCovidOpenHelper().writableDatabase
         val tabelaPacientes = TabelaPacientes(db)
 
-        val paciente1 = Paciente(nomePaciente = "António Ramos", numeroUtente = "123456789", dataNascimento = Date(1990-1900,7,1), contacto = "961234567")
+        val paciente1 = Paciente(nomePaciente = "António Ramos", numeroUtente = "123456789", dataNascimento = Date(1990-1900,7,1), morada="",contacto = "961234567")
         paciente1.id = inserePaciente(tabelaPacientes,paciente1)
-        val paciente2 = Paciente(nomePaciente = "João Santos", numeroUtente = "234567891", dataNascimento = Date(1985-1900,11,31), contacto = "939876543")
+        val paciente2 = Paciente(nomePaciente = "João Santos", numeroUtente = "234567891", dataNascimento = Date(1985-1900,11,31), morada="",contacto = "939876543")
         paciente2.id = inserePaciente(tabelaPacientes,paciente2)
 
         val tabelaInfetados = TabelaInfetados(db)
@@ -268,6 +274,7 @@ class TestesBaseDados {
             nomePaciente = "Raúl Furtado ",
             numeroUtente = "918273654",
             dataNascimento = Date(1985-1900,1,5),
+            morada ="Rua do Hospital",
             contacto = "966543219"
         )
         paciente.id = inserePaciente(tabelaPacientes, paciente)
@@ -297,7 +304,9 @@ class TestesBaseDados {
         val paciente = Paciente(
             nomePaciente = "Bernardo Mota",
             numeroUtente = "12987654",
-            dataNascimento = Date(1995-1900,7,19), contacto = "921345678")
+            dataNascimento = Date(1995-1900,7,19),
+            morada = "Rua do Castelo",
+            contacto = "921345678")
         paciente.id = inserePaciente(tabelaPacientes, paciente)
 
         val tabelaInfetados = TabelaInfetados(db)

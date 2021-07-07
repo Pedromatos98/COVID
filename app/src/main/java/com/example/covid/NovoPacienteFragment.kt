@@ -24,6 +24,7 @@ class NovoPacienteFragment : Fragment() {
     private lateinit var editTextNomePaciente: EditText
     private lateinit var editTextNumeroUtente: EditText
     private lateinit var editTextDataNascimento: EditText
+    private lateinit var editTextMorada:EditText
     private lateinit var editTextContacto: EditText
 
     // This property is only valid between onCreateView and
@@ -47,6 +48,7 @@ class NovoPacienteFragment : Fragment() {
         editTextNomePaciente = view.findViewById(R.id.editTextNomePaciente)
         editTextNumeroUtente = view.findViewById(R.id.editTextNumeroUtente)
         editTextDataNascimento = view.findViewById(R.id.editTextDataNascimento)
+        editTextMorada = view.findViewById(R.id.editTextMorada)
         editTextContacto = view.findViewById(R.id.editTextContacto)
 
 
@@ -77,6 +79,10 @@ class NovoPacienteFragment : Fragment() {
         if (dataNascimento.isEmpty()) {
             return
         }
+        val morada = editTextMorada.text.toString()
+        if (dataNascimento.isEmpty()) {
+            return
+        }
         val contacto = editTextContacto.text.toString()
         if (contacto.isEmpty()) {
             editTextContacto.setError("Preencha o contacto")
@@ -87,6 +93,7 @@ class NovoPacienteFragment : Fragment() {
             nomePaciente = nomePaciente,
             numeroUtente = numeroUtente,
             dataNascimento = Date(dataNascimento) ,
+            morada = morada,
             contacto = contacto
         )
 

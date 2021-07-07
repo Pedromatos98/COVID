@@ -20,6 +20,7 @@ class AdapterPacientes (val fragment: ListaPacientesFragment) : RecyclerView.Ada
         private val textViewNomePaciente = itemView.findViewById<TextView>(R.id.textViewNomePaciente)
         private val textViewNumeroUtente = itemView.findViewById<TextView>(R.id.textViewNumeroUtente)
         private val textViewDataNascimento = itemView.findViewById<TextView>(R.id.textViewIdade)
+        private val textViewMorada = itemView.findViewById<TextView>(R.id.textViewMorada)
         private val textViewContacto = itemView.findViewById<TextView>(R.id.textViewContacto)
 
         private lateinit var paciente: Paciente
@@ -38,6 +39,8 @@ class AdapterPacientes (val fragment: ListaPacientesFragment) : RecyclerView.Ada
             textViewNomePaciente.text = Paciente.nomePaciente
             textViewNumeroUtente.text = Paciente.numeroUtente
             textViewDataNascimento.text = idade.toString()
+            textViewMorada.text = paciente.morada
+
             textViewContacto.text = Paciente.contacto
         }
 
