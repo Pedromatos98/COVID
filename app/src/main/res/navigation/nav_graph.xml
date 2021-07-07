@@ -121,6 +121,9 @@
         <action
             android:id="@+id/action_listaVacinadosFragment_to_novoVacinadoFragment"
             app:destination="@id/novoVacinadoFragment" />
+        <action
+            android:id="@+id/action_listaVacinadosFragment_to_eliminaVacinadoFragment"
+            app:destination="@id/eliminaVacinadoFragment" />
     </fragment>
     <fragment
         android:id="@+id/novoVacinadoFragment"
@@ -129,6 +132,15 @@
         tools:layout="@layout/fragment_novo_vacinado" >
         <action
             android:id="@+id/action_novoVacinadoFragment_to_listaVacinadosFragment"
+            app:destination="@id/listaVacinadosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eliminaVacinadoFragment"
+        android:name="com.example.covid.EliminaVacinadoFragment"
+        android:label="fragment_elimina_vacinado"
+        tools:layout="@layout/fragment_elimina_vacinado" >
+        <action
+            android:id="@+id/action_eliminaVacinadoFragment_to_listaVacinadosFragment"
             app:destination="@id/listaVacinadosFragment" />
     </fragment>
 </navigation>

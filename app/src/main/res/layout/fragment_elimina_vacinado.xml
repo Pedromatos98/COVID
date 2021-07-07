@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EliminaVacinadoFragment" >
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margem_ecran"
+        android:layout_marginLeft="@dimen/margem_ecran"
+        android:layout_marginTop="@dimen/margem_ecran"
+        android:layout_marginEnd="@dimen/margem_ecran"
+        android:layout_marginRight="@dimen/margem_ecran"
+        android:text="Nome:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/cor_destaque"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewNomeVacinado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margem_ecran"
+        android:layout_marginLeft="@dimen/margem_ecran"
+        android:layout_marginTop="@dimen/margem_campos"
+        android:layout_marginEnd="@dimen/margem_ecran"
+        android:layout_marginRight="@dimen/margem_ecran"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black"
+        tools:text="Alberto" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margem_ecran"
+        android:layout_marginLeft="@dimen/margem_ecran"
+        android:layout_marginTop="@dimen/margem_campos"
+        android:layout_marginEnd="@dimen/margem_ecran"
+        android:layout_marginRight="@dimen/margem_ecran"
+        android:text="Data de Admnistração"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/cor_destaque"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewDataAdmnistracao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margem_ecran"
+        android:layout_marginLeft="@dimen/margem_ecran"
+        android:layout_marginTop="@dimen/margem_campos"
+        android:layout_marginEnd="@dimen/margem_ecran"
+        android:layout_marginRight="@dimen/margem_ecran"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black"
+        tools:text="01/07/2021" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margem_ecran"
+        android:layout_marginLeft="@dimen/margem_ecran"
+        android:layout_marginTop="@dimen/margem_campos"
+        android:layout_marginEnd="@dimen/margem_ecran"
+        android:layout_marginRight="@dimen/margem_ecran"
+        android:text="Número de Admnistrações :"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/cor_destaque"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margem_ecran"
+        android:layout_marginLeft="@dimen/margem_ecran"
+        android:layout_marginTop="@dimen/margem_campos"
+        android:layout_marginEnd="@dimen/margem_ecran"
+        android:layout_marginRight="@dimen/margem_ecran"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black"
+        tools:text="1" />
+</LinearLayout>
