@@ -24,4 +24,5 @@
     <string name="sintomas">Sintomas</string>
     <string name="edita_infetado_fragment_label">Editar Infetado</string>
     <string name="elimina_infetado_fragment_label">Eliminar Infetado?</string>
+    <string name="lista_vacinados_fragment">Vacinados</string>
 </resources>
